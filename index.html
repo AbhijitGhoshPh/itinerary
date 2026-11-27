@@ -1,0 +1,2881 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simlipal Family Road Trip — Dec 25–28, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   CSS CUSTOM PROPERTIES & RESET
+   ========================================================= */
+:root {
+  --green-900: #1a3a2a;
+  --green-800: #2d5a3d;
+  --green-700: #3d7a52;
+  --green-600: #4e9a66;
+  --green-500: #5eb87a;
+  --green-100: #e8f5ed;
+  --amber-700: #b35f00;
+  --amber-500: #e07b1a;
+  --amber-400: #f0a040;
+  --amber-100: #fff3e0;
+  --cream: #faf7f2;
+  --cream-dark: #f0ebe0;
+  --text-900: #1a1a1a;
+  --text-700: #3a3a3a;
+  --text-500: #666;
+  --text-300: #aaa;
+  --white: #fff;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.12);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.16);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --font: 'Nunito', system-ui, -apple-system, sans-serif;
+  --transition: .22s ease;
+}
+[data-theme="dark"] {
+  --cream: #111c16;
+  --cream-dark: #0d150f;
+  --text-900: #f0f0f0;
+  --text-700: #ccc;
+  --text-500: #999;
+  --text-300: #555;
+  --white: #1e2d22;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.3);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.5);
+  --amber-100: #2a1f00;
+  --green-100: #0d2015;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font);
+  background: var(--cream);
+  color: var(--text-900);
+  line-height: 1.65;
+  transition: background var(--transition), color var(--transition);
+}
+img { display: block; max-width: 100%; height: auto; }
+button { cursor: pointer; font-family: var(--font); }
+input, textarea, select { font-family: var(--font); }
+
+/* =========================================================
+   UTILITY
+   ========================================================= */
+.badge {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.badge-green  { background: var(--green-100); color: var(--green-800); }
+.badge-amber  { background: var(--amber-100); color: var(--amber-700); }
+.badge-red    { background: #fde8e8; color: #b30000; }
+.badge-blue   { background: #e8f0fe; color: #1a56db; }
+.badge-purple { background: #f0e8fe; color: #6d28d9; }
+.badge-grey   { background: #f0f0f0; color: #555; }
+[data-theme="dark"] .badge-grey { background: #2a2a2a; color: #bbb; }
+[data-theme="dark"] .badge-blue { background: #1a2040; color: #90b0ff; }
+[data-theme="dark"] .badge-purple { background: #200e3a; color: #c09aff; }
+[data-theme="dark"] .badge-red { background: #3a0000; color: #ff8080; }
+
+.verify-note {
+  font-size: .75rem;
+  color: var(--amber-700);
+  background: var(--amber-100);
+  border-left: 3px solid var(--amber-500);
+  padding: 6px 10px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 8px 0;
+}
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--green-800);
+  margin-bottom: 16px;
+}
+[data-theme="dark"] .section-title { color: var(--green-500); }
+.card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 18px;
+  transition: box-shadow var(--transition);
+}
+.card:hover { box-shadow: var(--shadow-md); }
+
+/* =========================================================
+   TOP BAR (theme toggle + print button)
+   ========================================================= */
+#topbar {
+  position: fixed;
+  top: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px;
+}
+#topbar button {
+  background: var(--white);
+  border: 1.5px solid var(--green-700);
+  color: var(--green-800);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: .82rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition), color var(--transition);
+}
+#topbar button:hover { background: var(--green-700); color: #fff; }
+[data-theme="dark"] #topbar button { color: var(--green-500); border-color: var(--green-600); }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+#hero {
+  position: relative;
+  min-height: 72vw;
+  max-height: 540px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px 32px;
+  text-align: center;
+}
+#hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.12) 0%, rgba(10,30,15,.78) 100%);
+}
+#hero-content { position: relative; z-index: 2; color: #fff; }
+#hero h1 {
+  font-size: clamp(1.5rem, 6vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0,0,0,.4);
+}
+#hero .sub {
+  font-size: clamp(.9rem, 3.5vw, 1.1rem);
+  opacity: .92;
+  margin-top: 4px;
+}
+#countdown {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.cd-unit {
+  background: rgba(255,255,255,.18);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  min-width: 60px;
+}
+.cd-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  display: block;
+}
+.cd-label { font-size: .65rem; text-transform: uppercase; letter-spacing: .06em; opacity: .85; }
+
+/* =========================================================
+   RESORT SIDE SELECTOR (shown below hero)
+   ========================================================= */
+#resort-selector {
+  background: var(--white);
+  border-bottom: 2px solid var(--green-100);
+  padding: 14px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: center;
+}
+#resort-selector label { font-size: .85rem; font-weight: 700; color: var(--green-800); }
+[data-theme="dark"] #resort-selector label { color: var(--green-500); }
+#resort-selector select, #resort-selector input {
+  border: 1.5px solid var(--green-600);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: .88rem;
+  background: var(--cream);
+  color: var(--text-900);
+  flex: 1;
+  min-width: 170px;
+  max-width: 320px;
+}
+.selector-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+#resort-dist-note {
+  font-size: .78rem;
+  color: var(--text-500);
+  width: 100%;
+  text-align: center;
+}
+
+/* =========================================================
+   STICKY TABS
+   ========================================================= */
+#tabs-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+#tabs-wrap::-webkit-scrollbar { display: none; }
+#tabs {
+  display: flex;
+  min-width: max-content;
+  padding: 0 8px;
+}
+#tabs button {
+  background: none;
+  border: none;
+  padding: 14px 20px;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--text-500);
+  border-bottom: 3px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+#tabs button.active, #tabs button:hover {
+  color: var(--green-700);
+  border-bottom-color: var(--green-600);
+}
+[data-theme="dark"] #tabs button.active,
+[data-theme="dark"] #tabs button:hover { color: var(--green-500); border-bottom-color: var(--green-500); }
+
+/* =========================================================
+   MAIN CONTENT WRAPPER
+   ========================================================= */
+main { max-width: 740px; margin: 0 auto; padding: 20px 14px 60px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+.timeline { position: relative; padding-left: 36px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--green-600), var(--green-100));
+  border-radius: 2px;
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+.tl-dot {
+  position: absolute;
+  left: -29px;
+  top: 4px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--green-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 0 0 4px var(--cream);
+  flex-shrink: 0;
+}
+.tl-time {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--green-700);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 2px;
+}
+.tl-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-900);
+}
+.tl-desc {
+  font-size: .88rem;
+  color: var(--text-700);
+  margin-top: 3px;
+}
+.tl-tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* =========================================================
+   INFO BOX
+   ========================================================= */
+.info-box {
+  background: var(--green-100);
+  border-left: 4px solid var(--green-700);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 14px 16px;
+  margin: 20px 0;
+}
+[data-theme="dark"] .info-box { background: #0d2015; }
+.info-box h3 { font-size: .95rem; color: var(--green-800); margin-bottom: 6px; }
+[data-theme="dark"] .info-box h3 { color: var(--green-400); }
+.info-box ul { padding-left: 18px; font-size: .88rem; color: var(--text-700); }
+.info-box ul li { margin-bottom: 4px; }
+
+/* =========================================================
+   FREE-TIME FILTER CARDS (Day 2)
+   ========================================================= */
+.filter-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.filter-btn {
+  background: var(--cream-dark);
+  border: 1.5px solid transparent;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--text-700);
+  transition: all var(--transition);
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--green-700);
+  color: #fff;
+  border-color: var(--green-700);
+}
+[data-theme="dark"] .filter-btn { background: #1e2d22; color: var(--text-500); }
+.idea-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width:480px) { .idea-grid { grid-template-columns: 1fr; } }
+.idea-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.idea-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.idea-card.hidden { display: none; }
+.idea-card-img {
+  width: 100%; height: 110px; object-fit: cover;
+  background: linear-gradient(135deg, var(--green-700), var(--green-500));
+}
+.idea-card-body { padding: 12px; }
+.idea-card-title { font-size: .9rem; font-weight: 800; }
+.idea-card-desc { font-size: .8rem; color: var(--text-500); margin-top: 3px; }
+.idea-card-tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* =========================================================
+   SEATING TOOL (Day 3)
+   ========================================================= */
+.seating-section { margin: 24px 0; }
+.vehicles-wrap { display: flex; flex-wrap: wrap; gap: 20px; }
+.vehicle-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+  flex: 1;
+  min-width: 260px;
+}
+.vehicle-card h3 {
+  font-size: .95rem;
+  font-weight: 800;
+  color: var(--green-800);
+  margin-bottom: 10px;
+  border-bottom: 1.5px solid var(--green-100);
+  padding-bottom: 8px;
+}
+[data-theme="dark"] .vehicle-card h3 { color: var(--green-500); }
+.seat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.seat-slot {
+  min-height: 52px;
+  border: 2px dashed var(--green-200, #a8d5b5);
+  border-radius: var(--radius-sm);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: .78rem;
+  color: var(--text-500);
+  position: relative;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+}
+.seat-slot:hover { background: var(--green-100); border-color: var(--green-600); }
+.seat-slot.occupied {
+  background: var(--green-100);
+  border-color: var(--green-600);
+  border-style: solid;
+}
+[data-theme="dark"] .seat-slot.occupied { background: #0d2015; }
+.seat-label { font-size: .68rem; color: var(--text-300); margin-bottom: 3px; }
+.seat-person {
+  font-weight: 700;
+  color: var(--green-800);
+  font-size: .82rem;
+  text-align: center;
+}
+[data-theme="dark"] .seat-person { color: var(--green-400); }
+.person-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.person-chip {
+  background: var(--amber-100);
+  border: 1.5px solid var(--amber-400);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--amber-700);
+  cursor: grab;
+  user-select: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.person-chip.assigned { opacity: .4; cursor: default; }
+.person-chip.child-chip { background: #e8f0fe; border-color: #90b0ff; color: #1a56db; }
+[data-theme="dark"] .person-chip { background: #2a1f00; border-color: #b35f00; color: var(--amber-400); }
+[data-theme="dark"] .person-chip.child-chip { background: #0d1830; border-color: #4a6aaa; color: #90b0ff; }
+.seat-slot.drag-over { background: var(--green-100); border-color: var(--green-600); border-style: solid; }
+.seating-reset-btn {
+  background: none;
+  border: 1.5px solid var(--text-300);
+  color: var(--text-500);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: .8rem;
+  font-weight: 700;
+  margin-top: 10px;
+  transition: all var(--transition);
+}
+.seating-reset-btn:hover { border-color: var(--green-700); color: var(--green-700); }
+.seat-remove-btn {
+  position: absolute;
+  top: 2px; right: 4px;
+  background: none;
+  border: none;
+  color: var(--text-300);
+  font-size: .75rem;
+  line-height: 1;
+  display: none;
+}
+.seat-slot.occupied .seat-remove-btn { display: block; }
+.seat-remove-btn:hover { color: #c00; }
+
+/* =========================================================
+   PACKING CHECKLIST
+   ========================================================= */
+.checklist-group { margin-bottom: 20px; }
+.checklist-group h3 {
+  font-size: .95rem;
+  font-weight: 800;
+  color: var(--green-800);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+[data-theme="dark"] .checklist-group h3 { color: var(--green-400); }
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.checklist-item:hover { background: var(--cream-dark); }
+.checklist-item input[type=checkbox] {
+  width: 20px; height: 20px;
+  accent-color: var(--green-700);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.checklist-item span {
+  font-size: .9rem;
+  color: var(--text-700);
+  flex: 1;
+}
+.checklist-item.checked span { text-decoration: line-through; color: var(--text-300); }
+.checklist-progress {
+  font-size: .78rem;
+  color: var(--text-500);
+  margin-bottom: 10px;
+}
+.progress-bar-wrap {
+  height: 6px;
+  background: var(--cream-dark);
+  border-radius: 3px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-600), var(--green-500));
+  border-radius: 3px;
+  transition: width .4s ease;
+}
+
+/* =========================================================
+   EXPENSE SPLITTER (legacy, kept for print)
+   ========================================================= */
+.expense-add-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.expense-add-row input, .expense-add-row select {
+  flex: 1;
+  min-width: 100px;
+  border: 1.5px solid var(--green-600);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: .88rem;
+  background: var(--cream);
+  color: var(--text-900);
+}
+.expense-add-row button {
+  background: var(--green-700);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  font-size: .88rem;
+  font-weight: 700;
+}
+.expense-add-row button:hover { background: var(--green-800); }
+.expense-list { margin-bottom: 16px; }
+.expense-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: .88rem;
+  transition: background var(--transition);
+}
+.expense-row:nth-child(even) { background: var(--cream-dark); }
+.expense-desc { flex: 1; color: var(--text-700); }
+.expense-paid { font-size: .78rem; color: var(--text-500); }
+.expense-amt { font-weight: 700; color: var(--green-800); min-width: 70px; text-align: right; }
+[data-theme="dark"] .expense-amt { color: var(--green-400); }
+.expense-del { background: none; border: none; color: var(--text-300); font-size: 1rem; }
+.expense-del:hover { color: #c00; }
+.totals-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+/* =========================================================
+   SHARED EXPENSE TRACKER (new tab)
+   ========================================================= */
+#exp-config-banner {
+  background: var(--amber-100);
+  border: 2px dashed var(--amber-500);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+[data-theme="dark"] #exp-config-banner { background: #2a1f00; }
+#exp-config-banner h3 { color: var(--amber-700); font-size: .95rem; margin-bottom: 6px; }
+#exp-config-banner code {
+  background: rgba(0,0,0,.07);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: .82rem;
+  font-family: monospace;
+}
+[data-theme="dark"] #exp-config-banner code { background: rgba(255,255,255,.1); }
+.exp-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+.exp-toolbar-btn {
+  background: var(--white);
+  border: 1.5px solid var(--green-600);
+  color: var(--green-800);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: .82rem;
+  font-weight: 700;
+  transition: all var(--transition);
+}
+.exp-toolbar-btn:hover { background: var(--green-700); color: #fff; }
+[data-theme="dark"] .exp-toolbar-btn { color: var(--green-400); }
+.sync-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-left: auto;
+}
+.sync-badge.synced  { background: #d4edda; color: #155724; }
+.sync-badge.pending { background: var(--amber-100); color: var(--amber-700); }
+.sync-badge.offline { background: #f8d7da; color: #721c24; }
+.sync-badge.syncing { background: #cce5ff; color: #004085; }
+[data-theme="dark"] .sync-badge.synced  { background: #0d2a0f; color: #5cb85c; }
+[data-theme="dark"] .sync-badge.pending { background: #2a1f00; color: var(--amber-400); }
+[data-theme="dark"] .sync-badge.offline { background: #2a0000; color: #ff6b6b; }
+[data-theme="dark"] .sync-badge.syncing { background: #001a2a; color: #66b3ff; }
+.exp-add-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 18px;
+  margin-bottom: 20px;
+}
+.exp-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+@media(max-width:500px){ .exp-form-grid { grid-template-columns: 1fr; } }
+.exp-field { display: flex; flex-direction: column; gap: 4px; }
+.exp-field label { font-size: .75rem; font-weight: 700; color: var(--text-500); text-transform: uppercase; letter-spacing: .04em; }
+.exp-field input, .exp-field select, .exp-field textarea {
+  border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: .88rem;
+  background: var(--cream);
+  color: var(--text-900);
+  transition: border-color var(--transition);
+  font-family: var(--font);
+}
+.exp-field input:focus, .exp-field select:focus, .exp-field textarea:focus {
+  outline: none; border-color: var(--green-600);
+}
+.exp-submit-btn {
+  background: var(--green-700);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 24px;
+  font-size: .95rem;
+  font-weight: 800;
+  width: 100%;
+  transition: background var(--transition);
+}
+.exp-submit-btn:hover { background: var(--green-800); }
+.exp-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+  background: var(--white);
+}
+.exp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .85rem;
+}
+.exp-table th {
+  background: var(--green-800);
+  color: #fff;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: .78rem;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.exp-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--cream-dark);
+  color: var(--text-700);
+  vertical-align: middle;
+}
+.exp-table tr:last-child td { border-bottom: none; }
+.exp-table tr:nth-child(even) td { background: var(--cream-dark); }
+[data-theme="dark"] .exp-table tr:nth-child(even) td { background: #0d150f; }
+.exp-row-pending td { opacity: .65; }
+.exp-row-pending td:first-child::before { content: '⏳ '; }
+.exp-edit-btn, .exp-del-btn {
+  background: none; border: none; font-size: .9rem; cursor: pointer; padding: 2px 4px;
+}
+.exp-edit-btn:hover { color: var(--green-700); }
+.exp-del-btn:hover  { color: #c00; }
+/* Summary cards */
+.exp-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.exp-sum-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 14px 12px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+.exp-sum-label { font-size: .72rem; font-weight: 700; color: var(--text-500); text-transform: uppercase; letter-spacing: .04em; }
+.exp-sum-value { font-size: 1.2rem; font-weight: 800; color: var(--green-800); margin-top: 2px; }
+[data-theme="dark"] .exp-sum-value { color: var(--green-400); }
+.exp-sum-sub { font-size: .72rem; color: var(--text-300); margin-top: 2px; }
+/* Per-person paid vs share table */
+.pps-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+.pps-table th { background: var(--green-100); color: var(--green-800); padding: 8px 10px; text-align: left; font-size: .78rem; }
+[data-theme="dark"] .pps-table th { background: #0d2015; color: var(--green-400); }
+.pps-table td { padding: 8px 10px; border-bottom: 1px solid var(--cream-dark); }
+.pps-table tr:last-child td { border-bottom: none; }
+.owed   { color: #c00; font-weight: 700; }
+.credit { color: var(--green-700); font-weight: 700; }
+[data-theme="dark"] .owed   { color: #ff8080; }
+[data-theme="dark"] .credit { color: var(--green-500); }
+/* Category chart */
+.cat-chart { margin: 0 0 20px; }
+.cat-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: .82rem; }
+.cat-bar-label { min-width: 80px; color: var(--text-700); font-weight: 600; }
+.cat-bar-track { flex: 1; height: 18px; background: var(--cream-dark); border-radius: 9px; overflow: hidden; }
+.cat-bar-fill  { height: 100%; border-radius: 9px; background: linear-gradient(90deg, var(--green-700), var(--green-500)); transition: width .5s ease; }
+.cat-bar-val   { min-width: 60px; text-align: right; color: var(--green-800); font-weight: 700; font-size: .8rem; }
+[data-theme="dark"] .cat-bar-val { color: var(--green-400); }
+/* Settle up */
+.settle-item {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  box-shadow: var(--shadow-sm);
+  font-size: .88rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.settle-arrow { font-size: 1.2rem; color: var(--amber-500); }
+.settle-amount { font-weight: 800; color: var(--green-800); margin-left: auto; }
+[data-theme="dark"] .settle-amount { color: var(--green-400); }
+.total-card {
+  background: var(--green-100);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  text-align: center;
+}
+[data-theme="dark"] .total-card { background: #0d2015; }
+.total-card-name { font-size: .78rem; font-weight: 700; color: var(--green-800); }
+[data-theme="dark"] .total-card-name { color: var(--green-400); }
+.total-card-amt { font-size: 1.3rem; font-weight: 800; color: var(--green-700); margin-top: 2px; }
+[data-theme="dark"] .total-card-amt { color: var(--green-500); }
+.balance-note { font-size: .78rem; color: var(--text-500); margin-top: 4px; }
+
+/* =========================================================
+   CONTACTS CARD
+   ========================================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width:480px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.contact-field label { font-size: .78rem; font-weight: 700; color: var(--text-500); text-transform: uppercase; letter-spacing: .04em; }
+.contact-field input {
+  border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: .88rem;
+  background: var(--cream);
+  color: var(--text-900);
+  transition: border-color var(--transition);
+}
+.contact-field input:focus { outline: none; border-color: var(--green-600); }
+
+/* =========================================================
+   IMAGE CARDS
+   ========================================================= */
+.image-card { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); margin: 20px 0; }
+.image-card img { width: 100%; height: 220px; object-fit: cover; }
+.image-card-cap {
+  padding: 10px 14px;
+  font-size: .78rem;
+  color: var(--text-500);
+  background: var(--white);
+}
+
+/* =========================================================
+   RULES CARD
+   ========================================================= */
+.rules-card {
+  background: var(--amber-100);
+  border: 1.5px solid var(--amber-400);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin: 20px 0;
+}
+[data-theme="dark"] .rules-card { background: #2a1f00; border-color: #b35f00; }
+.rules-card h3 { font-size: 1rem; font-weight: 800; color: var(--amber-700); margin-bottom: 10px; }
+.rules-card ul { padding-left: 18px; font-size: .88rem; color: var(--text-700); }
+.rules-card ul li { margin-bottom: 6px; }
+
+/* =========================================================
+   OVERVIEW SECTION
+   ========================================================= */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+@media (max-width:480px) { .overview-grid { grid-template-columns: 1fr; } }
+.stat-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.stat-icon { font-size: 1.8rem; flex-shrink: 0; }
+.stat-label { font-size: .75rem; color: var(--text-500); text-transform: uppercase; letter-spacing: .04em; }
+.stat-value { font-size: 1rem; font-weight: 800; color: var(--text-900); margin-top: 1px; }
+
+/* =========================================================
+   BEFORE-YOU-GO CHECKLIST
+   ========================================================= */
+.byg-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  align-items: flex-start;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+.byg-icon { font-size: 1.4rem; flex-shrink: 0; }
+.byg-title { font-size: .9rem; font-weight: 800; }
+.byg-desc { font-size: .82rem; color: var(--text-500); margin-top: 2px; }
+
+/* =========================================================
+   KID SAFETY SECTION
+   ========================================================= */
+.kidsafe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width:480px) { .kidsafe-grid { grid-template-columns: 1fr; } }
+.kidsafe-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+}
+.kidsafe-card .icon { font-size: 1.5rem; margin-bottom: 6px; }
+.kidsafe-card h4 { font-size: .9rem; font-weight: 800; margin-bottom: 4px; }
+.kidsafe-card p { font-size: .82rem; color: var(--text-500); }
+
+/* =========================================================
+   FOOTER / CREDITS
+   ========================================================= */
+footer {
+  text-align: center;
+  padding: 30px 16px;
+  font-size: .78rem;
+  color: var(--text-300);
+  border-top: 1px solid var(--cream-dark);
+  margin-top: 40px;
+}
+footer a { color: var(--green-700); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* =========================================================
+   PRINT STYLES
+   ========================================================= */
+@media print {
+  #topbar, #tabs-wrap, .filter-row, .expense-add-row, .seating-section .person-pool,
+  .seating-reset-btn, .seat-remove-btn { display: none !important; }
+  #hero { max-height: 220px; }
+  #hero-img { opacity: .5; }
+  main { max-width: 100%; padding: 0; }
+  .tab-panel { display: block !important; }
+  .card, .info-box, .rules-card, .byg-item, .kidsafe-card { box-shadow: none !important; border: 1px solid #ddd; }
+  body { font-size: 13px; }
+  .tl-dot { background: #555 !important; }
+}
+
+/* =========================================================
+   RESPONSIVE TWEAKS
+   ========================================================= */
+@media (max-width:600px) {
+  #hero { min-height: 90vw; }
+  #resort-selector { flex-direction: column; align-items: stretch; }
+  .totals-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <button onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark">🌙 Dark</button>
+  <button onclick="window.print()" title="Print or Save as PDF">🖨️ Print</button>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <img id="hero-img"
+    src="https://commons.wikimedia.org/wiki/Special:FilePath/Barehipani_Water_Fall_of_perennial_stream_Budha_Balang_Simlipal_Biosphere_Reserve.jpg"
+    alt="Barehipani Waterfall, Simlipal Biosphere Reserve — a 399-metre cascade through sal forest"
+    loading="eager"
+    onerror="this.style.display='none'"
+  >
+  <div id="hero-overlay"></div>
+  <div id="hero-content">
+    <h1>🌿 Simlipal Family Road Trip</h1>
+    <p class="sub">25 – 28 December 2026 &nbsp;•&nbsp; 3 Families, 2 Friends, 11 Adventurers</p>
+    <div id="countdown">
+      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-hrs">--</span><span class="cd-label">Hours</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-min">--</span><span class="cd-label">Mins</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-sec">--</span><span class="cd-label">Secs</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESORT SIDE SELECTOR -->
+<div id="resort-selector">
+  <div class="selector-row">
+    <label for="resort-side">Resort side:</label>
+    <select id="resort-side" onchange="onResortChange()">
+      <option value="pithabata">Pithabata / Baripada side (~220 km from Kolkata)</option>
+      <option value="jashipur">Jashipur side (~290 km from Kolkata)</option>
+    </select>
+  </div>
+  <div class="selector-row" style="flex:2;min-width:220px;">
+    <label for="resort-addr" style="white-space:nowrap;">📍 Resort on Maps:</label>
+    <input type="text" id="resort-addr"
+      placeholder="Google Maps link…"
+      value="https://maps.app.goo.gl/U6E8Sx6MjKrQHV957"
+      oninput="saveResortAddr()">
+    <a id="resort-maps-btn" href="https://maps.app.goo.gl/U6E8Sx6MjKrQHV957" target="_blank" rel="noopener"
+      style="background:var(--green-700);color:#fff;border-radius:var(--radius-sm);padding:7px 12px;font-size:.82rem;font-weight:700;text-decoration:none;white-space:nowrap;">Open Map 🗺️</a>
+  </div>
+  <div id="resort-dist-note">
+    📍 Estimated distance: <strong id="dist-text">~220 km from Kolkata via NH16 → Baripada → Pithabata</strong>
+    &nbsp;<span class="badge badge-amber">approx.</span>
+    &nbsp;<span class="badge badge-red">Verify with resort</span>
+  </div>
+</div>
+
+<!-- STICKY TABS -->
+<div id="tabs-wrap">
+  <div id="tabs">
+    <button class="active" data-tab="overview" onclick="switchTab('overview',this)">🗺️ Overview</button>
+    <button data-tab="day1" onclick="switchTab('day1',this)">Day 1 · Dec 25</button>
+    <button data-tab="day2" onclick="switchTab('day2',this)">Day 2 · Dec 26</button>
+    <button data-tab="day3" onclick="switchTab('day3',this)">Day 3 · Dec 27</button>
+    <button data-tab="day4" onclick="switchTab('day4',this)">Day 4 · Dec 28</button>
+    <button data-tab="extras" onclick="switchTab('extras',this)">🎒 Extras</button>
+    <button data-tab="expenses" onclick="switchTab('expenses',this)">💰 Expenses</button>
+  </div>
+</div>
+
+<main>
+
+<!-- =========================================================
+     OVERVIEW TAB
+     ========================================================= -->
+<div class="tab-panel active" id="panel-overview">
+  <h2 class="section-title">Trip at a Glance</h2>
+
+  <div class="overview-grid">
+    <div class="stat-card"><div class="stat-icon">🗓️</div><div><div class="stat-label">Dates</div><div class="stat-value">25–28 Dec 2026</div></div></div>
+    <div class="stat-card"><div class="stat-icon">🚗</div><div><div class="stat-label">Vehicles</div><div class="stat-value">3 personal cars</div></div></div>
+    <div class="stat-card"><div class="stat-icon">👨‍👩‍👧</div><div><div class="stat-label">Group</div><div class="stat-value">8 adults + 3 kids</div></div></div>
+    <div class="stat-card"><div class="stat-icon">📍</div><div><div class="stat-label">Origin</div><div class="stat-value">Kolkata, WB</div></div></div>
+    <div class="stat-card"><div class="stat-icon">🌲</div><div><div class="stat-label">Destination</div><div class="stat-value">Simlipal Tiger Reserve, Odisha</div></div></div>
+    <div class="stat-card"><div class="stat-icon">🏨</div><div><div class="stat-label">Stay</div><div class="stat-value">Similipal Eco Resort (3 nights)</div></div></div>
+  </div>
+
+  <div class="rules-card">
+    <h3>⚠️ Rules Inside the Reserve — Read Before You Go</h3>
+    <ul>
+      <li><strong>Stay inside the vehicle</strong> in forest zones at all times — strictly enforced.</li>
+      <li><strong>No plastic or litter.</strong> Carry all waste out.</li>
+      <li><strong>No loud music</strong> or horn-honking inside the forest.</li>
+      <li>Maintain a <strong>safe distance from all wildlife.</strong> Do not stop near animals.</li>
+      <li><strong>Exit by 6 PM.</strong> Forest roads are hazardous after dark.</li>
+      <li>A mandatory <strong>licensed guide</strong> must accompany every tourist vehicle.</li>
+      <li>No smoking inside the forest zone.</li>
+    </ul>
+    <p class="verify-note">⚠️ Entry rules, vehicle quotas, and timings change seasonally. Confirm with the resort, the tour operator, or the official sites <strong>similipal.org</strong> / <strong>ecotourodisha.com</strong> before the trip.</p>
+  </div>
+
+  <div class="info-box">
+    <h3>📋 Before You Go — Key Items</h3>
+    <ul>
+      <li>Entry permits / booking confirmation (resort + tour operator) ✦ <em>verify with operator</em></li>
+      <li>Pithabata gate entry window: approx. 8–9 AM. Jashipur gate: approx. 6 AM–12 PM (noon). All vehicles must exit by 6 PM. <em>Verify with forest department — timings change each season.</em></li>
+      <li>Vehicle eligibility: private cars need 180 mm ground clearance for core-zone forest tracks. Confirm whether your personal cars are eligible or if operator Scorpios are mandatory inside. ✦ <em>verify</em></li>
+      <li>Vehicle entry limit: ~25 vehicles/day at Pithabata; ~35 vehicles/day at Jashipur (Kaliani gate). <em>Book early.</em></li>
+      <li>ID proofs (Aadhaar/passport) for all adults + vehicle registration, insurance, PUC.</li>
+      <li>Keep children's birth certificates handy if asked for age verification.</li>
+      <li>December weather in Simlipal: Days 20–26 °C, Nights 8–14 °C. Carry warm layers.</li>
+    </ul>
+  </div>
+
+  <div class="image-card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Barehipani_Water_Fall_of_perennial_stream_Budha_Balang_Simlipal_Biosphere_Reserve.jpg"
+         alt="Barehipani Waterfall, Simlipal Biosphere Reserve — 399 m cascade on the Budha Balang river"
+         loading="lazy"
+         onerror="this.style.background='linear-gradient(135deg,#2d5a3d,#4e9a66)';this.alt='Barehipani (image unavailable)'">
+    <div class="image-card-cap">Barehipani Waterfall, Simlipal Biosphere Reserve — Toni Wöhrl / Wikimedia Commons / CC-BY-SA 4.0</div>
+  </div>
+
+  <div class="section-title" style="margin-top:28px;">🧒 Travellers</div>
+  <div class="card">
+    <table style="width:100%;border-collapse:collapse;font-size:.88rem;">
+      <thead>
+        <tr style="border-bottom:2px solid var(--green-100);">
+          <th style="text-align:left;padding:6px 8px;color:var(--green-800);">Family</th>
+          <th style="text-align:left;padding:6px 8px;color:var(--green-800);">Adults</th>
+          <th style="text-align:left;padding:6px 8px;color:var(--green-800);">Child</th>
+        </tr>
+      </thead>
+      <tbody id="traveller-table">
+        <tr><td style="padding:6px 8px;">Family A</td><td style="padding:6px 8px;">Couple A (2 adults)</td><td style="padding:6px 8px;">Child A (age 2)</td></tr>
+        <tr style="background:var(--cream-dark)"><td style="padding:6px 8px;">Family B</td><td style="padding:6px 8px;">Couple B (2 adults)</td><td style="padding:6px 8px;">Child B (age 3)</td></tr>
+        <tr><td style="padding:6px 8px;">Family C</td><td style="padding:6px 8px;">Couple C (2 adults)</td><td style="padding:6px 8px;">Child C (age 4)</td></tr>
+        <tr style="background:var(--cream-dark)"><td style="padding:6px 8px;">Friends</td><td style="padding:6px 8px;">Friend 1 + Friend 2</td><td style="padding:6px 8px;">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title" style="margin-top:28px;">🗺️ Day-by-Day Summary</div>
+  <div class="card">
+    <div style="font-size:.88rem;color:var(--text-700);">
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--cream-dark);">
+        <div style="font-weight:800;min-width:60px;color:var(--green-700);">Day 1<br><small style="font-weight:400;color:var(--text-300);">Dec 25</small></div>
+        <div>🚗 Drive Kolkata → Simlipal. 6:00–6:30 AM departure. Arrive resort by mid-afternoon. Check in, rest, early dinner.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--cream-dark);">
+        <div style="font-weight:800;min-width:60px;color:var(--green-700);">Day 2<br><small style="font-weight:400;color:var(--text-300);">Dec 26</small></div>
+        <div>🌿 Free & relaxed day. Nature walk, birdwatching, local village/craft visit, campfire evening, stargazing.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--cream-dark);">
+        <div style="font-weight:800;min-width:60px;color:var(--green-700);">Day 3<br><small style="font-weight:400;color:var(--text-300);">Dec 27</small></div>
+        <div>🏞️ Full-day jungle & waterfall tour in 2 Scorpios (pre-booked). Barehipani + Joranda waterfalls, Chahala grassland, Gudgudia viewpoint.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;">
+        <div style="font-weight:800;min-width:60px;color:var(--green-700);">Day 4<br><small style="font-weight:400;color:var(--text-300);">Dec 28</small></div>
+        <div>🏠 Checkout, return drive Simlipal → Kolkata. Arrive home by evening.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END OVERVIEW -->
+
+
+<!-- =========================================================
+     DAY 1 TAB
+     ========================================================= -->
+<div class="tab-panel" id="panel-day1">
+  <h2 class="section-title">Day 1 — 25 Dec · Drive to Simlipal 🚗</h2>
+
+  <div class="verify-note">
+    📍 Route assumed: Kolkata → NH16 (via Kharagpur, Balasore, Jaleswar) → Baripada → Pithabata gate area
+    OR → NH18 → Baripada → Jashipur.
+    Adjust based on your selected resort side above.
+    Distances are approximate — confirm with Google Maps before departure.
+  </div>
+
+  <div id="day1-route-note" class="info-box" style="margin-top:14px;">
+    <h3 id="day1-route-title">📌 Route: Pithabata/Baripada side</h3>
+    <ul>
+      <li id="day1-dist-line">Distance: <strong>~220 km</strong> from central Kolkata to Baripada town, then ~22 km to Pithabata gate area. Total ~242 km. <span class="badge badge-amber">approx.</span></li>
+      <li>Driving time: <strong>~5–6 hrs</strong> total (including stops), assuming NH16 runs smoothly on a December 25 morning.</li>
+      <li>Suggested route: NH16 from Kolkata → Kharagpur → Balasore → Jaleswar → Baripada → Pithabata (for Baripada/Pithabata side); NH18 → Baripada → Jashipur for the Jashipur side.</li>
+    </ul>
+  </div>
+
+  <div class="rules-card" style="margin-top:16px;">
+    <h3>⏰ Important — Day-Entry Window</h3>
+    <ul>
+      <li><strong>Pithabata gate:</strong> Private vehicle entry approx. 8–9 AM only. <em>Verify with forest dept.</em></li>
+      <li><strong>Jashipur (Kaliani) gate:</strong> Entry approx. 6 AM–12 PM (noon). <em>Verify with forest dept.</em></li>
+      <li>Our 6:00–6:30 AM departure from Kolkata means we will <strong>arrive well after the entry window closes.</strong></li>
+      <li>✅ <strong>Plan for Day 1:</strong> Drive straight to the resort. Rest, settle in. <em>Do not plan to enter the core zone on Day 1.</em></li>
+    </ul>
+    <p class="verify-note">Verify exact gate timings with the resort or forest department before the trip.</p>
+  </div>
+
+  <div class="timeline" style="margin-top:24px;">
+
+    <div class="tl-item">
+      <div class="tl-dot">⏰</div>
+      <div class="tl-time">5:30 AM</div>
+      <div class="tl-title">Wake up & final pack</div>
+      <div class="tl-desc">Get the kids ready, load bags, install car seats. WhatsApp convoy group: confirm all 3 cars are ready and share the agreed route.</div>
+      <div class="tl-tags"><span class="badge badge-grey">Prep</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚗</div>
+      <div class="tl-time">6:00–6:30 AM</div>
+      <div class="tl-title">Convoy departs Kolkata</div>
+      <div class="tl-desc">All 3 cars leave together. Stay in visual contact leaving the city. Each car has a full tank of fuel. Share live location on WhatsApp.</div>
+      <div class="tl-tags"><span class="badge badge-green">Drive</span><span class="badge badge-grey">Convoy</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">⛽</div>
+      <div class="tl-time">~7:15 AM · Near Kharagpur</div>
+      <div class="tl-title">Fuel + stretch stop #1</div>
+      <div class="tl-desc">Top up all 3 tanks at a highway petrol station. Quick tea and biscuits for adults. Diaper check for the little ones (~45 min into drive).</div>
+      <div class="tl-tags"><span class="badge badge-green">Drive</span><span class="badge badge-blue">Kids</span><span class="badge badge-amber">Food</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🍳</div>
+      <div class="tl-time">~8:30–9:00 AM · Near Panskura / Mecheda highway dhabas</div>
+      <div class="tl-title">Breakfast halt</div>
+      <div class="tl-desc">Hot breakfast at a highway dhaba or restaurant. Poha/paratha/idli for adults; carry pre-packed kid-friendly options (porridge, fruit, bread). ~30–40 mins. Good time for kids to run around a bit safely.</div>
+      <div class="tl-tags"><span class="badge badge-amber">Food</span><span class="badge badge-blue">Kids</span><span class="badge badge-grey">Rest</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚗</div>
+      <div class="tl-time">~9:30 AM onwards</div>
+      <div class="tl-title">Highway drive continues</div>
+      <div class="tl-desc">NH16 through West Bengal → Odisha border. Road is good on this stretch. Kids nap window — this is a great stretch for them to sleep (keep the car comfortable, low music).</div>
+      <div class="tl-tags"><span class="badge badge-green">Drive</span><span class="badge badge-blue">Nap</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🛑</div>
+      <div class="tl-time">~11:00 AM · Balasore or Jaleswar area</div>
+      <div class="tl-title">Rest stop #2 — hydration & kids</div>
+      <div class="tl-desc">Quick 10–15 min stop. Fresh water, biscuits/snacks for kids. Leg stretch. Convoy sync — confirm all cars are on track.</div>
+      <div class="tl-tags"><span class="badge badge-grey">Rest</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🍽️</div>
+      <div class="tl-time">~12:30–1:00 PM · Baripada town or outskirts</div>
+      <div class="tl-title">Lunch halt — Baripada</div>
+      <div class="tl-desc">Baripada is the district HQ of Mayurbhanj — good restaurants available. Odisha thali or dhaba lunch. Kids need a proper meal and a 20-min run-around. ~45–60 mins. <span class="badge badge-amber">approx.</span></div>
+      <div class="tl-tags"><span class="badge badge-amber">Food</span><span class="badge badge-blue">Kids</span><span class="badge badge-grey">Rest</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🛑</div>
+      <div class="tl-time">~2:30 PM · Before forest roads begin</div>
+      <div class="tl-title">Last petrol + rest stop #3</div>
+      <div class="tl-desc">Top up fuel at Baripada / last petrol pump before the forest (fuel stations inside or close to the reserve are very limited). Confirm resort arrival time by phone. Forest roads ahead — slow down.</div>
+      <div class="tl-tags"><span class="badge badge-green">Drive</span><span class="badge badge-grey">Prep</span><span class="badge badge-red">Verify</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🏨</div>
+      <div class="tl-time">~3:00–4:00 PM (Pithabata side) / ~4:00–5:00 PM (Jashipur side)</div>
+      <div class="tl-title">Arrive at Similipal Eco Resort ✅</div>
+      <div class="tl-desc">Check in. Let the kids run on the grass. Freshen up, unpack. Explore the resort grounds before sunset.</div>
+      <div class="tl-tags"><span class="badge badge-green">Nature</span><span class="badge badge-grey">Rest</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🌅</div>
+      <div class="tl-time">~5:30–6:00 PM</div>
+      <div class="tl-title">Sunset stroll near the resort</div>
+      <div class="tl-desc">Short walk on resort grounds or just outside the gate (do not enter forest roads after dark). Listen for evening birds and jungle sounds.</div>
+      <div class="tl-tags"><span class="badge badge-green">Nature</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🍛</div>
+      <div class="tl-time">7:30 PM</div>
+      <div class="tl-title">Dinner at resort + early bedtime</div>
+      <div class="tl-desc">Hot dinner. Kids to bed by 9 PM — they need rest for Day 3's early start. Adults: plan Day 2 activities together.</div>
+      <div class="tl-tags"><span class="badge badge-amber">Food</span><span class="badge badge-grey">Rest</span></div>
+    </div>
+
+  </div><!-- /timeline -->
+
+  <div class="info-box" style="margin-top:24px;">
+    <h3>🚙 Convoy Tips</h3>
+    <ul>
+      <li><strong>WhatsApp group:</strong> Create a group for all 3 cars before departure. Share live location throughout the drive.</li>
+      <li><strong>Offline maps:</strong> Download the Kolkata → Baripada → Simlipal route on Google Maps offline (or use Maps.me) the night before. Mobile signal is patchy near the forest.</li>
+      <li><strong>Stay in visual contact</strong> leaving Kolkata; it's fine to separate on the highway as long as you have a common meeting point (lunch, petrol).</li>
+      <li><strong>Agree on a lead car</strong> for city exits and forest roads where you need to follow in line.</li>
+      <li><strong>Reach before sunset.</strong> Forest access roads are narrow, poorly lit, and potentially dangerous after dark. <em>Do not risk a late arrival.</em></li>
+      <li>Keep a <strong>common first-aid kit</strong> accessible in one car; share the resort phone number with everyone before departure.</li>
+    </ul>
+  </div>
+
+</div>
+<!-- END DAY 1 -->
+
+
+<!-- =========================================================
+     DAY 2 TAB
+     ========================================================= -->
+<div class="tab-panel" id="panel-day2">
+  <h2 class="section-title">Day 2 — 26 Dec · Free & Relaxed 🌿</h2>
+
+  <div class="info-box">
+    <h3>Today's Vibe</h3>
+    <ul>
+      <li>No fixed schedule. Let the kids set the pace.</li>
+      <li>Explore around the resort. Rest. Breathe the forest air.</li>
+      <li>Keep any outing short — the core zone requires a guided vehicle entry. Check access with the resort for any activity you plan.</li>
+    </ul>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-row" id="idea-filters">
+    <button class="filter-btn active" data-filter="all" onclick="filterIdeas('all',this)">All</button>
+    <button class="filter-btn" data-filter="kids" onclick="filterIdeas('kids',this)">👶 Kids-friendly</button>
+    <button class="filter-btn" data-filter="easy-walk" onclick="filterIdeas('easy-walk',this)">🚶 Easy Walk</button>
+    <button class="filter-btn" data-filter="photo" onclick="filterIdeas('photo',this)">📷 Photography</button>
+    <button class="filter-btn" data-filter="food" onclick="filterIdeas('food',this)">🍽️ Food</button>
+    <button class="filter-btn" data-filter="rest" onclick="filterIdeas('rest',this)">😴 Rest</button>
+  </div>
+
+  <div class="idea-grid" id="idea-grid">
+
+    <div class="idea-card" data-tags="kids easy-walk photo">
+      <img class="idea-card-img"
+        src="https://cdn.pixabay.com/photo/2017/08/06/15/24/india-2592903_640.jpg"
+        alt="Sal forest path — morning light through tropical trees"
+        loading="lazy"
+        onerror="this.style.background='linear-gradient(135deg,#2d5a3d,#4e9a66)';this.style.minHeight='110px'">
+      <div class="idea-card-body">
+        <div class="idea-card-title">🌳 Morning Nature Walk</div>
+        <div class="idea-card-desc">Short guided walk on the resort grounds or immediately outside. Spot butterflies, birds, and sal trees. Best at sunrise (6–7 AM).</div>
+        <div class="idea-card-tags">
+          <span class="badge badge-blue">Kids-friendly</span>
+          <span class="badge badge-green">Easy Walk</span>
+          <span class="badge badge-purple">Photography</span>
+        </div>
+        <p class="verify-note">Stay on marked resort trails. Do not wander into the forest unguided.</p>
+      </div>
+    </div>
+
+    <div class="idea-card" data-tags="photo easy-walk">
+      <img class="idea-card-img"
+        src="https://cdn.pixabay.com/photo/2017/03/14/12/55/peacock-2143862_640.jpg"
+        alt="Colourful bird — birdwatching in forest"
+        loading="lazy"
+        onerror="this.style.background='linear-gradient(135deg,#1a3a2a,#3d7a52)';this.style.minHeight='110px'">
+      <div class="idea-card-body">
+        <div class="idea-card-title">🦜 Birdwatching</div>
+        <div class="idea-card-desc">Simlipal hosts over 300 bird species. Keep binoculars handy at dawn and dusk. Look for hornbills, peacocks, and jungle fowl near the resort area.</div>
+        <div class="idea-card-tags">
+          <span class="badge badge-green">Easy Walk</span>
+          <span class="badge badge-purple">Photography</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="idea-card" data-tags="kids photo easy-walk">
+      <img class="idea-card-img"
+        src="https://cdn.pixabay.com/photo/2016/12/13/22/15/india-1905610_640.jpg"
+        alt="Colourful tribal pottery and craft — Odisha artisan village"
+        loading="lazy"
+        onerror="this.style.background='linear-gradient(135deg,#b35f00,#e07b1a)';this.style.minHeight='110px'">
+      <div class="idea-card-body">
+        <div class="idea-card-title">🏺 Local Village / Tribal Craft Visit</div>
+        <div class="idea-card-desc">The villages around Simlipal (Mayurbhanj district) are home to Santali and Ho tribes with rich craft traditions. Ask the resort to arrange a short village visit. Buy local bamboo work, Dokra metal craft, or textiles directly from artisans.</div>
+        <div class="idea-card-tags">
+          <span class="badge badge-blue">Kids-friendly</span>
+          <span class="badge badge-purple">Photography</span>
+          <span class="badge badge-green">Easy Walk</span>
+        </div>
+        <p class="verify-note">Ask the resort to arrange or recommend a nearby village visit.</p>
+      </div>
+    </div>
+
+    <div class="idea-card sitakund-only" data-tags="kids easy-walk photo" data-side="pithabata">
+      <img class="idea-card-img"
+        src="https://cdn.pixabay.com/photo/2020/05/28/04/42/waterfall-5229807_640.jpg"
+        alt="Forest waterfall — Sitakund Waterfall near Pithabata, Simlipal"
+        loading="lazy"
+        onerror="this.style.background='linear-gradient(135deg,#1a3a2a,#5eb87a)';this.style.minHeight='110px'">
+      <div class="idea-card-body">
+        <div class="idea-card-title">💧 Sitakund Waterfall <span class="badge badge-blue">Pithabata side only</span></div>
+        <div class="idea-card-desc">Located near Lulung/Pithabata gate area, Sitakund is a short, scenic waterfall inside the buffer zone — a good half-day outing if you're on the Pithabata/Baripada side. Approximately 40 km from Baripada. <span class="badge badge-amber">approx.</span></div>
+        <div class="idea-card-tags">
+          <span class="badge badge-blue">Kids-friendly</span>
+          <span class="badge badge-green">Easy Walk</span>
+          <span class="badge badge-purple">Photography</span>
+        </div>
+        <p class="verify-note">🔍 Check access timings, entry fees, and road condition with the resort before going. Always verify first.</p>
+      </div>
+    </div>
+
+    <div class="idea-card" data-tags="kids rest food">
+      <img class="idea-card-img"
+        src="https://cdn.pixabay.com/photo/2015/09/09/21/26/camp-fire-932044_640.jpg"
+        alt="Campfire flames in the evening — forest campfire"
+        loading="lazy"
+        onerror="this.style.background='linear-gradient(135deg,#b35f00,#f0a040)';this.style.minHeight='110px'">
+      <div class="idea-card-body">
+        <div class="idea-card-title">🔥 Campfire Evening</div>
+        <div class="idea-card-desc">Ask the resort to arrange a campfire after dark. Roast marshmallows, tell stories, play Antakshari with the kids. December nights get cold — perfect campfire weather!</div>
+        <div class="idea-card-tags">
+          <span class="badge badge-blue">Kids-friendly</span>
+          <span class="badge badge-amber">Food</span>
+          <span class="badge badge-grey">Rest</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="idea-card" data-tags="kids rest photo">
+      <div class="idea-card-img" style="background:linear-gradient(135deg,#0d150f,#1a3a2a);display:flex;align-items:center;justify-content:center;font-size:3rem;">🌟</div>
+      <div class="idea-card-body">
+        <div class="idea-card-title">🌌 Stargazing</div>
+        <div class="idea-card-desc">Simlipal has very low light pollution. Clear December skies are outstanding for stargazing. Spot the Milky Way, Orion, and planets. Kids love spotting shooting stars. Bring a blanket and lie outside for 30 mins after the campfire.</div>
+        <div class="idea-card-tags">
+          <span class="badge badge-blue">Kids-friendly</span>
+          <span class="badge badge-purple">Photography</span>
+          <span class="badge badge-grey">Rest</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="idea-card" data-tags="kids rest">
+      <div class="idea-card-img" style="background:linear-gradient(135deg,#2a1f00,#b35f00);display:flex;align-items:center;justify-content:center;font-size:3rem;">🃏</div>
+      <div class="idea-card-body">
+        <div class="idea-card-title">🎲 Board Games & Cards</div>
+        <div class="idea-card-desc">Pack a few card games (UNO, Snap) and a compact board game. Great for the afternoon rest hour and for kids' downtime. Adults' poker night after the kids sleep.</div>
+        <div class="idea-card-tags">
+          <span class="badge badge-blue">Kids-friendly</span>
+          <span class="badge badge-grey">Rest</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="idea-card" data-tags="kids easy-walk food photo">
+      <img class="idea-card-img"
+        src="https://cdn.pixabay.com/photo/2016/03/26/22/07/india-1281614_640.jpg"
+        alt="Indian market street — Baripada town, Mayurbhanj district, Odisha"
+        loading="lazy"
+        onerror="this.style.background='linear-gradient(135deg,#b35f00,#e07b1a)';this.style.minHeight='110px'">
+      <div class="idea-card-body">
+        <div class="idea-card-title">🏙️ Baripada Town Visit</div>
+        <div class="idea-card-desc">The district HQ (~22 km from Pithabata gate / farther from Jashipur side) has a local market, the Bhanjkishore Museum, and the Jagannath temple at Baripada. Good for a half-day outing, local snacks, and shopping for Mayurbhanj handicrafts.</div>
+        <div class="idea-card-tags">
+          <span class="badge badge-blue">Kids-friendly</span>
+          <span class="badge badge-green">Easy Walk</span>
+          <span class="badge badge-amber">Food</span>
+        </div>
+        <p class="verify-note">~22 km from Pithabata gate; farther from Jashipur. Verify distance for your resort side.</p>
+      </div>
+    </div>
+
+    <div class="idea-card" data-tags="rest food">
+      <div class="idea-card-img" style="background:linear-gradient(135deg,#1a3a2a,#4e9a66);display:flex;align-items:center;justify-content:center;font-size:3rem;">😴</div>
+      <div class="idea-card-body">
+        <div class="idea-card-title">😴 Nap & Pool Afternoon</div>
+        <div class="idea-card-desc">The adults deserve it too. Afternoon siesta (2–4 PM), resort hammocks, or just lounging with a book and tea. Kids nap at the same time — everyone wins.</div>
+        <div class="idea-card-tags">
+          <span class="badge badge-grey">Rest</span>
+          <span class="badge badge-amber">Food</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /idea-grid -->
+
+  <!-- MAP OF THE AREA (Day 2) -->
+  <h2 class="section-title" style="margin-top:28px;">🗺️ Area Map — Around the Resort</h2>
+  <p style="font-size:.88rem;color:var(--text-500);margin-bottom:10px;">
+    The map below shows the Pithabata / Lulung gate area where the resort is located, with nearby points of interest.
+    Switch to the Jashipur side from the selector above if your resort is on that side.
+  </p>
+  <div id="day2-map-wrap" style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:8px;">
+    <!-- OpenStreetMap embed via iframe — no API key needed, free to use -->
+    <iframe
+      id="day2-osm"
+      title="Map: Simlipal area around resort"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=85.9800%2C21.6500%2C86.5500%2C22.0500&layer=mapnik&marker=21.8500%2C86.2800"
+      style="width:100%;height:340px;border:none;display:block;"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
+    <a href="https://www.openstreetmap.org/?mlat=21.85&mlon=86.28#map=11/21.85/86.28"
+       target="_blank" rel="noopener"
+       style="font-size:.78rem;color:var(--green-700);font-weight:700;">Open full map ↗</a>
+    <span style="font-size:.78rem;color:var(--text-300);">|</span>
+    <a href="https://maps.app.goo.gl/U6E8Sx6MjKrQHV957"
+       target="_blank" rel="noopener"
+       style="font-size:.78rem;color:var(--green-700);font-weight:700;">Resort on Google Maps ↗</a>
+  </div>
+  <p style="font-size:.72rem;color:var(--text-300);margin-top:4px;">Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener" style="color:var(--green-600);">OpenStreetMap contributors</a>, ODbL. Map is approximate — verify with your resort for exact location.</p>
+
+</div>
+<!-- END DAY 2 -->
+
+
+<!-- =========================================================
+     DAY 3 TAB
+     ========================================================= -->
+<div class="tab-panel" id="panel-day3">
+  <h2 class="section-title">Day 3 — 27 Dec · Jungle & Waterfall Tour 🏞️</h2>
+
+  <div class="rules-card">
+    <h3>✅ Pre-Departure Checklist (Day 3 morning)</h3>
+    <ul>
+      <li>☐ Confirm Scorpio operator has <strong>entry permits</strong> for both vehicles and all 11 passengers.</li>
+      <li>☐ Confirm vehicles have <strong>≥180 mm ground clearance</strong> as required for core zone forest tracks.</li>
+      <li>☐ Confirm <strong>gate reporting time</strong> and which gate (Pithabata or Jashipur).</li>
+      <li>☐ Confirm <strong>licensed guide</strong> is arranged for each vehicle.</li>
+      <li>☐ Packed lunches ready, water bottles filled (≥1.5 L per adult, 0.5 L per child).</li>
+      <li>☐ Kids' essentials in a daypack: diapers/pull-ups, spare clothes, snacks, first-aid.</li>
+      <li>☐ Camera, binoculars, fully charged phones + power banks.</li>
+    </ul>
+    <p class="verify-note">⚠️ Entry windows are strict. Arrive at the gate on time. Verify gate timing with operator the evening before.</p>
+  </div>
+
+  <div class="timeline" style="margin-top:20px;">
+
+    <div class="tl-item">
+      <div class="tl-dot">⏰</div>
+      <div class="tl-time">5:00 AM</div>
+      <div class="tl-title">Wake up & breakfast at resort</div>
+      <div class="tl-desc">Early light breakfast. Kids' food packed. All 11 passengers ready by 5:45 AM.</div>
+      <div class="tl-tags"><span class="badge badge-amber">Food</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚙</div>
+      <div class="tl-time">6:00 AM</div>
+      <div class="tl-title">Depart resort in 2 Scorpios</div>
+      <div class="tl-desc">Load up the Scorpios. Kids buckled in with parents. Operator + guide in each vehicle. Head to gate.</div>
+      <div class="tl-tags"><span class="badge badge-green">Drive</span><span class="badge badge-grey">Convoy</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚦</div>
+      <div class="tl-time">~6:30–7:00 AM</div>
+      <div class="tl-title">Gate entry & permit check</div>
+      <div class="tl-desc">Report at Pithabata / Jashipur gate. Permits verified. Forest roads begin. All windows up / down per guide instruction. <span class="badge badge-red">Stay inside vehicles from here on.</span></div>
+      <div class="tl-tags"><span class="badge badge-green">Nature</span><span class="badge badge-red">Rules</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🌲</div>
+      <div class="tl-time">7:00–8:30 AM · Jungle Drive</div>
+      <div class="tl-title">Sal forest & grassland drive (Lanjhighosara/Chahala area)</div>
+      <div class="tl-desc">Slow, scenic drive through dense sal forest. The Chahala grassland is a good area for spotting gaur, deer, and birdlife. The guide will advise. No wildlife guarantee — this is a scenic forest drive, not a wildlife safari.</div>
+      <div class="tl-tags"><span class="badge badge-green">Nature</span><span class="badge badge-purple">Photography</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🛑</div>
+      <div class="tl-time">~8:30–9:00 AM · Barehipani Chowk / viewpoint area</div>
+      <div class="tl-title">Comfort stop & kids snack</div>
+      <div class="tl-desc">Quick break at a designated stop near the Barehipani approach. Diapers checked, snacks distributed. Adults stretch legs near the vehicle.</div>
+      <div class="tl-tags"><span class="badge badge-blue">Kids</span><span class="badge badge-grey">Rest</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">💧</div>
+      <div class="tl-time">~9:00–10:30 AM</div>
+      <div class="tl-title">Barehipani Waterfall — India's 2nd highest 🌊</div>
+      <div class="tl-desc">The Budhabalanga River plunges 399 m off Meghasuni mountain in a single dramatic cascade. The designated viewpoint is accessible from the approach road. Photography heaven — bring a wide-angle lens. Kids love the mist and roar. <span class="badge badge-amber">approx. 1–1.5 hrs at the falls</span></div>
+      <div class="tl-tags"><span class="badge badge-green">Nature</span><span class="badge badge-purple">Photography</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🛣️</div>
+      <div class="tl-time">~10:30 AM – 12:00 PM</div>
+      <div class="tl-title">Jungle drive to Joranda via Gudgudia</div>
+      <div class="tl-desc">Joranda is about 20 km from the Barehipani chowk via ghati (hilly) forest roads — roughly 1 hr drive. Pass through Gudgudia viewpoint area for a panoramic valley view. Very scenic forest track. <span class="badge badge-amber">approx. 1 hr drive</span></div>
+      <div class="tl-tags"><span class="badge badge-green">Drive</span><span class="badge badge-green">Nature</span><span class="badge badge-purple">Photography</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🍱</div>
+      <div class="tl-time">~12:00 – 12:45 PM · Near Joranda area</div>
+      <div class="tl-title">Packed lunch stop — in/near vehicles</div>
+      <div class="tl-desc">Eat packed lunch at a designated picnic or rest point near Joranda. Kids nap opportunity after eating — keep the Scorpio idling with AC or windows open (weather dependent). Do not wander into the forest during lunch.</div>
+      <div class="tl-tags"><span class="badge badge-amber">Food</span><span class="badge badge-blue">Kids</span><span class="badge badge-blue">Nap</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">💧</div>
+      <div class="tl-time">~12:45 – 2:00 PM</div>
+      <div class="tl-title">Joranda Waterfall — 150 m single-drop ✨</div>
+      <div class="tl-desc">The Joranda falls drop ~150 m in an uninterrupted single plunge into a gorge amid dense sal. Less crowded than Barehipani. The mist is refreshing. The guide will keep the group together at the viewing area.</div>
+      <div class="tl-tags"><span class="badge badge-green">Nature</span><span class="badge badge-purple">Photography</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🛑</div>
+      <div class="tl-time">~2:00 – 2:30 PM</div>
+      <div class="tl-title">Comfort stop + afternoon snacks</div>
+      <div class="tl-desc">Last bathroom break in the forest (at a designated toilet point if available, else pack tissues). Kids' afternoon snack. Begin the return leg — must be out of the core zone well before 6 PM.</div>
+      <div class="tl-tags"><span class="badge badge-blue">Kids</span><span class="badge badge-amber">Food</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🌲</div>
+      <div class="tl-time">2:30 – 4:30 PM</div>
+      <div class="tl-title">Return forest drive</div>
+      <div class="tl-desc">Slow return drive through the forest. This is a great time for photography as the afternoon light turns golden. Kids often nap on the return leg — smooth jungle roads help.</div>
+      <div class="tl-tags"><span class="badge badge-green">Drive</span><span class="badge badge-purple">Photography</span><span class="badge badge-blue">Nap</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚦</div>
+      <div class="tl-time">~4:30–5:00 PM</div>
+      <div class="tl-title">Gate exit — before 6 PM ✅</div>
+      <div class="tl-desc">Exit the reserve at the gate. Mandatory by 6 PM. Permit returned, guide dismissed.</div>
+      <div class="tl-tags"><span class="badge badge-red">Rules</span><span class="badge badge-green">Drive</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🏨</div>
+      <div class="tl-time">~5:00–5:30 PM</div>
+      <div class="tl-title">Back at resort — rest, freshen up</div>
+      <div class="tl-desc">Showers, rest, kids' bath time. Upload photos to a shared album. Celebrate a great day.</div>
+      <div class="tl-tags"><span class="badge badge-grey">Rest</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🍛</div>
+      <div class="tl-time">7:30 PM</div>
+      <div class="tl-title">Dinner + campfire / stargazing</div>
+      <div class="tl-desc">Last evening at Simlipal. Special dinner, campfire, stargazing. Early bedtime — Day 4 checkout requires an early start.</div>
+      <div class="tl-tags"><span class="badge badge-amber">Food</span><span class="badge badge-grey">Rest</span></div>
+    </div>
+
+  </div><!-- /timeline -->
+
+  <!-- SEATING TOOL -->
+  <div class="seating-section">
+    <h2 class="section-title" style="margin-top:28px;">🚙 Seating Plan — 11 People, 2 Scorpios</h2>
+    <p style="font-size:.88rem;color:var(--text-500);margin-bottom:14px;">
+      Scorpio has 7 seats (1 front + 2 rows of 3). We use 2 Scorpios for 11 people: each fits 5–6 comfortably with kids. <strong>Kids must stay with their parents.</strong> Tap a seat to assign a person, or drag a person chip onto a seat.
+    </p>
+
+    <div class="person-pool" id="person-pool">
+      <!-- chips rendered by JS -->
+    </div>
+
+    <div class="vehicles-wrap" id="vehicles-wrap">
+      <!-- vehicles rendered by JS -->
+    </div>
+
+    <button class="seating-reset-btn" onclick="resetSeating()">↺ Reset seating</button>
+
+    <div class="verify-note" style="margin-top:12px;">
+      ⚠️ This is a planning tool only. Confirm actual seating with the Scorpio operator. Ensure all children ride with their parent(s) and that each row has an adult. Child seats in forest vehicles: check with the operator.
+    </div>
+  </div>
+
+  <!-- WATERFALL IMAGES -->
+  <div class="image-card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Barehipani_Water_Fall_of_perennial_stream_Budha_Balang_Simlipal_Biosphere_Reserve.jpg"
+         alt="Barehipani Waterfall — 399 m cascade, Budha Balang river, Simlipal Biosphere Reserve"
+         loading="lazy"
+         onerror="this.style.background='linear-gradient(135deg,#2d5a3d,#4e9a66)';this.style.minHeight='220px'">
+    <div class="image-card-cap">Barehipani Waterfall, Simlipal — Toni Wöhrl / Wikimedia Commons / CC-BY-SA 4.0</div>
+  </div>
+
+  <div class="image-card">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Joranda_Water_Fall_Simlipal_Biosphere_Reserve.jpg"
+         alt="Joranda Waterfall — 150 m single-drop plunge, Simlipal Biosphere Reserve"
+         loading="lazy"
+         onerror="this.style.background='linear-gradient(135deg,#1a3a2a,#3d7a52)';this.style.minHeight='220px'">
+    <div class="image-card-cap">Joranda Waterfall, Simlipal — Toni Wöhrl / Wikimedia Commons / CC-BY-SA 4.0</div>
+  </div>
+
+</div>
+<!-- END DAY 3 -->
+
+
+<!-- =========================================================
+     DAY 4 TAB
+     ========================================================= -->
+<div class="tab-panel" id="panel-day4">
+  <h2 class="section-title">Day 4 — 28 Dec · Return to Kolkata 🏠</h2>
+
+  <div class="info-box">
+    <h3>Today's Goal</h3>
+    <ul>
+      <li>Checkout, pack up, and begin the return drive early to reach Kolkata before dark.</li>
+      <li>Estimated drive: same distance as Day 1 in reverse — ~220 km (Pithabata side) or ~290 km (Jashipur side). <span class="badge badge-amber">approx.</span></li>
+      <li>Estimated arrival in Kolkata: <strong>4:00–6:00 PM</strong> depending on stops and side. <span class="badge badge-amber">approx.</span></li>
+    </ul>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot">⏰</div>
+      <div class="tl-time">6:00–6:30 AM</div>
+      <div class="tl-title">Wake up, early breakfast at resort</div>
+      <div class="tl-desc">Hot breakfast before checkout. Pack all luggage the night before to save time. Kids fed before the drive starts.</div>
+      <div class="tl-tags"><span class="badge badge-amber">Food</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🏨</div>
+      <div class="tl-time">7:00–7:30 AM</div>
+      <div class="tl-title">Checkout & final farewells</div>
+      <div class="tl-desc">Settle the resort bill. Return any rented or borrowed equipment. Take a last group photo. Load all 3 cars.</div>
+      <div class="tl-tags"><span class="badge badge-grey">Prep</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚗</div>
+      <div class="tl-time">7:30–8:00 AM</div>
+      <div class="tl-title">Convoy departs — Simlipal → Kolkata</div>
+      <div class="tl-desc">Reverse the Day 1 route. Kids nap window: 8–10 AM is a great stretch. Keep the convoy group active on WhatsApp.</div>
+      <div class="tl-tags"><span class="badge badge-green">Drive</span><span class="badge badge-blue">Nap</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🍳</div>
+      <div class="tl-time">~9:30–10:00 AM · Baripada or highway</div>
+      <div class="tl-title">Breakfast halt #2 (optional)</div>
+      <div class="tl-desc">If the resort breakfast was very early, stop near Baripada for a second light breakfast or tea and snacks. Kids' mid-morning fruit and milk.</div>
+      <div class="tl-tags"><span class="badge badge-amber">Food</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">⛽</div>
+      <div class="tl-time">~10:30 AM · Near Balasore / NH16</div>
+      <div class="tl-title">Fuel + stretch stop</div>
+      <div class="tl-desc">Top up fuel. Quick 10-minute stretch for everyone. Kids need a walk-around after 2+ hours in the car.</div>
+      <div class="tl-tags"><span class="badge badge-green">Drive</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🍽️</div>
+      <div class="tl-time">~12:30–1:30 PM · Kharagpur / Panskura area</div>
+      <div class="tl-title">Lunch halt</div>
+      <div class="tl-desc">Proper sit-down lunch at a highway restaurant. Good food, clean restrooms. Kids need a full meal and playtime — budget 45–60 mins. This is the last major stop before Kolkata.</div>
+      <div class="tl-tags"><span class="badge badge-amber">Food</span><span class="badge badge-blue">Kids</span><span class="badge badge-grey">Rest</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🚗</div>
+      <div class="tl-time">~1:30 PM onwards</div>
+      <div class="tl-title">Final stretch — Kolkata approach</div>
+      <div class="tl-desc">Kharagpur → NH16 → Kolkata. Watch out for city traffic from Vidyasagar Setu onwards. Keep a 15–20 min buffer in your ETA estimate.</div>
+      <div class="tl-tags"><span class="badge badge-green">Drive</span></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">🏠</div>
+      <div class="tl-time">~4:00–5:30 PM (Pithabata) / ~5:00–6:30 PM (Jashipur) <span class="badge badge-amber">approx.</span></div>
+      <div class="tl-title">Arrive home in Kolkata 🎉</div>
+      <div class="tl-desc">Trip complete! Unpack, let the kids decompress, share photos, and start planning the next one.</div>
+      <div class="tl-tags"><span class="badge badge-grey">Rest</span><span class="badge badge-blue">Kids</span></div>
+    </div>
+
+  </div><!-- /timeline -->
+
+  <div class="info-box" style="margin-top:20px;">
+    <h3>🏠 Checkout Reminders</h3>
+    <ul>
+      <li>Do a room sweep — chargers, kids' toys, and clothes are the most forgotten items.</li>
+      <li>Return any items borrowed from the resort (torches, blankets, etc.).</li>
+      <li>Collect any wildlife entry receipts or permits for your records.</li>
+      <li>Take a group photo at the resort gate — a tradition for every trip!</li>
+      <li>Share feedback or reviews with the resort and tour operator — it helps other families.</li>
+    </ul>
+  </div>
+</div>
+<!-- END DAY 4 -->
+
+
+<!-- =========================================================
+     EXTRAS TAB
+     ========================================================= -->
+<div class="tab-panel" id="panel-extras">
+
+  <!-- PACKING CHECKLIST -->
+  <h2 class="section-title">🎒 Packing Checklist</h2>
+  <div class="checklist-progress">
+    <span id="checklist-status">0 of 0 items checked</span>
+    <div class="progress-bar-wrap"><div class="progress-bar" id="checklist-bar" style="width:0%"></div></div>
+  </div>
+  <div id="checklist-container"></div>
+  <button onclick="clearChecklist()" style="border:1.5px solid var(--text-300);background:none;color:var(--text-500);border-radius:20px;padding:6px 14px;font-size:.8rem;font-weight:700;margin-bottom:28px;">↺ Reset checklist</button>
+
+  <!-- BEFORE YOU GO -->
+  <h2 class="section-title">🗒️ Before You Go</h2>
+  <div id="byg-list">
+    <div class="byg-item">
+      <div class="byg-icon">📋</div>
+      <div>
+        <div class="byg-title">Entry permits & booking confirmations</div>
+        <div class="byg-desc">Carry printed + digital copies for stay (Similipal Eco Resort) and the Day 3 jungle tour. Confirm permit quota availability for your chosen gate.</div>
+        <p class="verify-note">Verify with resort / tour operator before the trip.</p>
+      </div>
+    </div>
+    <div class="byg-item">
+      <div class="byg-icon">⏰</div>
+      <div>
+        <div class="byg-title">Gate timings & entry windows</div>
+        <div class="byg-desc">Pithabata: approx. 8–9 AM entry. Jashipur (Kaliani): approx. 6 AM–12 PM. Exit: 6 PM. These change each season.</div>
+        <p class="verify-note">Verify with the official forest department or resort before travel. <strong>similipal.org / ecotourodisha.com</strong></p>
+      </div>
+    </div>
+    <div class="byg-item">
+      <div class="byg-icon">🚙</div>
+      <div>
+        <div class="byg-title">Vehicle entry rules</div>
+        <div class="byg-desc">Private cars need ≥180 mm ground clearance for core zone forest tracks. Vehicle quota applies (~25 at Pithabata, ~35 at Jashipur/Kaliani per day). Confirm whether personal cars are allowed or only operator vehicles.</div>
+        <p class="verify-note">Verify with forest department / tour operator.</p>
+      </div>
+    </div>
+    <div class="byg-item">
+      <div class="byg-icon">🪪</div>
+      <div>
+        <div class="byg-title">ID proofs & vehicle documents</div>
+        <div class="byg-desc">Aadhaar / passport for each adult. Vehicle registration, insurance, PUC for each of the 3 cars. Driving licences for all drivers.</div>
+      </div>
+    </div>
+    <div class="byg-item">
+      <div class="byg-icon">🌦️</div>
+      <div>
+        <div class="byg-title">Weather forecast</div>
+        <div class="byg-desc">Check the forecast for Baripada / Jashipur for 25–28 Dec 2026 two days before departure. December is dry and cold at night (8–14 °C). Carry warm layers for nights and mornings.</div>
+        <p class="verify-note">Check a live weather service (IMD, Accuweather) closer to the date.</p>
+      </div>
+    </div>
+    <div class="byg-item">
+      <div class="byg-icon">📱</div>
+      <div>
+        <div class="byg-title">Offline maps downloaded</div>
+        <div class="byg-desc">Download Google Maps / Maps.me offline for the Kolkata–Baripada–Simlipal route. Mobile data is unreliable in the forest interior.</div>
+      </div>
+    </div>
+    <div class="byg-item">
+      <div class="byg-icon">🧒</div>
+      <div>
+        <div class="byg-title">Kids' requirements confirmed</div>
+        <div class="byg-desc">Car seats for 3 children (age 2, 3, 4). Confirm whether Scorpio operator provides seats for Day 3, or if you must bring your own. Enough diapers / pull-ups for 4 days + extras.</div>
+        <p class="verify-note">Confirm with Scorpio operator.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- KID SAFETY -->
+  <h2 class="section-title" style="margin-top:32px;">🧒 Kid Safety & Comfort</h2>
+  <div class="kidsafe-grid">
+    <div class="kidsafe-card"><div class="icon">⏱️</div><h4>Stop every 2 hours</h4><p>Build in a break every 2 hours max. Kids aged 2–4 cannot handle longer stretches without a bathroom break and movement.</p></div>
+    <div class="kidsafe-card"><div class="icon">🪑</div><h4>Car seats always</h4><p>Use age-appropriate car seats for all 3 children on every leg — including the Day 3 Scorpios. Never compromise on this.</p></div>
+    <div class="kidsafe-card"><div class="icon">😴</div><h4>Nap timing</h4><p>Plan drives to overlap with normal nap times (morning: 9–11 AM, afternoon: 1–3 PM). Moving vehicles often help kids sleep — a bonus on long days.</p></div>
+    <div class="kidsafe-card"><div class="icon">🤢</div><h4>Motion sickness</h4><p>Forest roads are twisty and bumpy. Seat kids in the middle row (less movement). Avoid heavy meals 1 hr before forest drives. Carry a motion-sickness remedy (consult your paediatrician for age-appropriate options).</p></div>
+    <div class="kidsafe-card"><div class="icon">💧</div><h4>Hydration</h4><p>Kids dehydrate faster than adults. Offer water or diluted juice every 30–45 mins. December is dry — hydration is easy to miss when it's cool.</p></div>
+    <div class="kidsafe-card"><div class="icon">🌲</div><h4>Stay inside in forest</h4><p>In the core zone, children must stay inside the vehicle at all times. No exceptions, even at waterfall viewpoints unless the guide confirms a safe designated area.</p></div>
+    <div class="kidsafe-card"><div class="icon">🦟</div><h4>Mosquito & sun protection</h4><p>Apply DEET-free mosquito repellent safe for children (e.g. natural citronella patches). Sun hat and light cotton layers for daytime. Warm jacket for mornings and evenings.</p></div>
+    <div class="kidsafe-card"><div class="icon">🩺</div><h4>Kids' first-aid kit</h4><p>Pack: paracetamol drops, ORS sachets, antiseptic, band-aids, anti-rash cream, any prescription medicines. Carry each child's paediatrician's contact number.</p></div>
+  </div>
+
+  <!-- EXPENSE TRACKER MOVED TO DEDICATED TAB -->
+  <div class="info-box" style="margin-top:32px;">
+    <h3>💰 Expense Tracker</h3>
+    <p style="font-size:.88rem;color:var(--text-700);">The shared expense tracker has its own tab — tap <strong>💰 Expenses</strong> in the tab bar above for the full shared tracker with Google Sheets sync, charts, and settle-up calculations.</p>
+  </div>
+
+  <!-- IMPORTANT CONTACTS -->
+  <h2 class="section-title" style="margin-top:32px;">📞 Important Contacts</h2>
+  <p style="font-size:.82rem;color:var(--text-500);margin-bottom:14px;">Fill in your confirmed numbers here — they will be saved in your browser.</p>
+  <div class="card">
+    <div class="contact-grid" id="contacts-grid">
+      <!-- rendered by JS -->
+    </div>
+  </div>
+  <div class="verify-note" style="margin-top:8px;">Do not use phone numbers from the internet without verification. Contact your resort and tour operator directly for official numbers.</div>
+
+</div>
+<!-- END EXTRAS -->
+
+<!-- =========================================================
+     EXPENSES TAB (shared tracker with Google Sheets backend)
+     ========================================================= -->
+<div class="tab-panel" id="panel-expenses">
+
+  <div id="exp-config-banner">
+    <h3>⚙️ Google Sheets Backend — Pre-configured ✅</h3>
+    <p style="font-size:.82rem;color:var(--text-700);margin-bottom:6px;">
+      The web app URL and trip code are <strong>already set</strong> — the tracker connects to Google Sheets automatically.
+      Share the page URL + trip code <code>SIMLIPAL26</code> with the group via WhatsApp.
+      Anyone who opens the page can add expenses immediately.
+    </p>
+    <p style="font-size:.72rem;color:var(--text-300);margin-top:4px;">⚠️ Anyone with the page link and trip code can add entries. Do not enter sensitive personal data.</p>
+    <details style="margin-top:10px;">
+      <summary style="cursor:pointer;font-size:.82rem;font-weight:700;color:var(--green-700);">🔧 Change URL or Trip Code (advanced)</summary>
+      <div style="margin-top:10px;">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <div class="exp-field" style="flex:2;min-width:200px;">
+            <label for="cfg-url">Apps Script Web App URL</label>
+            <input type="url" id="cfg-url" placeholder="https://script.google.com/macros/s/…/exec" oninput="saveExpConfig()">
+          </div>
+          <div class="exp-field" style="flex:1;min-width:120px;">
+            <label for="cfg-code">Trip Code</label>
+            <input type="text" id="cfg-code" placeholder="e.g. SIMLIPAL26" oninput="saveExpConfig()">
+          </div>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
+          <button onclick="saveExpConfigBtn()" style="background:var(--green-700);color:#fff;border:none;border-radius:var(--radius-sm);padding:8px 18px;font-size:.88rem;font-weight:700;cursor:pointer;">💾 Save & Reconnect</button>
+          <button onclick="clearExpConfig()" style="background:none;border:1.5px solid var(--text-300);color:var(--text-500);border-radius:var(--radius-sm);padding:8px 14px;font-size:.82rem;font-weight:700;cursor:pointer;">↺ Reset to Defaults</button>
+        </div>
+      </div>
+    </details>
+    <details style="margin-top:10px;">
+      <summary style="cursor:pointer;font-size:.82rem;font-weight:700;color:var(--green-700);">📖 How it works / Setup instructions</summary>
+      <div style="font-size:.82rem;color:var(--text-700);line-height:1.7;margin-top:10px;">
+        The page talks to a <strong>Google Apps Script Web App</strong> that reads and writes to a <strong>Google Sheet</strong> in your Google account.
+        No external server — Google runs the script for free.<br><br>
+        <strong>Flow:</strong> This page → HTTPS → Apps Script (your Google account) → Google Sheet<br><br>
+        <strong>To re-deploy or change the script:</strong><br>
+        1. Open the Sheet → Extensions → Apps Script<br>
+        2. Edit the code → Deploy → Manage deployments → Edit → Deploy<br>
+        3. Paste the new URL above<br><br>
+        <strong>Sheet headers (Row 1 of the "Expenses" tab):</strong><br>
+        <code>id | date | paidBy | category | amount | note | sharedWith | addedBy | timestamp</code>
+      </div>
+    </details>
+    <details style="margin-top:10px;">
+      <summary style="cursor:pointer;font-size:.82rem;font-weight:700;color:var(--green-700);">📋 Apps Script source code</summary>
+      <pre id="apps-script-code" style="font-size:.72rem;background:var(--cream-dark);padding:12px;border-radius:var(--radius-sm);overflow-x:auto;margin-top:8px;white-space:pre-wrap;line-height:1.5;">// ============================================================
+// Simlipal Trip — Shared Expense Tracker
+// Deploy as Web App: Execute as Me, Anyone can access
+// ============================================================
+
+const SHEET_NAME = 'Expenses';
+const TRIP_CODE  = 'SIMLIPAL26';
+
+function doGet(e) {
+  const code = (e.parameter || {}).code || '';
+  if (code !== TRIP_CODE) return jsonResponse({ error: 'Invalid trip code' });
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
+  const rows  = sheet.getDataRange().getValues();
+  if (rows.length &lt; 2) return jsonResponse({ rows: [] });
+  const headers = rows[0];
+  const data = rows.slice(1).map(r => {
+    const obj = {};
+    headers.forEach((h, i) => obj[h] = r[i]);
+    return obj;
+  });
+  return jsonResponse({ rows: data });
+}
+
+function doPost(e) {
+  try {
+    const body = JSON.parse(e.postData.contents);
+    if (body.code !== TRIP_CODE) return jsonResponse({ error: 'Invalid trip code' });
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
+    if (body.action === 'add') {
+      sheet.appendRow([body.id, body.date, body.paidBy, body.category,
+        body.amount, body.note||'', body.sharedWith||'all',
+        body.addedBy||'', new Date().toISOString()]);
+      return jsonResponse({ ok: true });
+    }
+    if (body.action === 'delete') {
+      const data = sheet.getDataRange().getValues();
+      for (let i = 1; i &lt; data.length; i++) {
+        if (String(data[i][0]) === String(body.id)) {
+          sheet.deleteRow(i + 1);
+          return jsonResponse({ ok: true });
+        }
+      }
+      return jsonResponse({ error: 'Not found' });
+    }
+    return jsonResponse({ error: 'Unknown action' });
+  } catch(err) {
+    return jsonResponse({ error: err.toString() });
+  }
+}
+
+function jsonResponse(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}</pre>
+      <button onclick="copyAppsScript()" style="margin-top:8px;background:var(--green-700);color:#fff;border:none;border-radius:var(--radius-sm);padding:7px 16px;font-size:.82rem;font-weight:700;cursor:pointer;">📋 Copy to clipboard</button>
+    </details>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="exp-toolbar">
+    <button class="exp-toolbar-btn" onclick="expRefresh()">🔄 Refresh</button>
+    <button class="exp-toolbar-btn" onclick="expExportCSV()">⬇️ Export CSV</button>
+    <span id="exp-sync-badge" class="sync-badge offline">⚫ Offline-only</span>
+  </div>
+
+  <!-- SUMMARY CARDS -->
+  <div class="exp-summary-grid" id="exp-summary-grid">
+    <div class="exp-sum-card"><div class="exp-sum-label">Today's Total</div><div class="exp-sum-value" id="exp-today">₹0</div></div>
+    <div class="exp-sum-card"><div class="exp-sum-label">Trip Total</div><div class="exp-sum-value" id="exp-grand">₹0</div></div>
+    <div class="exp-sum-card"><div class="exp-sum-label">Per Family Share</div><div class="exp-sum-value" id="exp-per-fam">₹0</div><div class="exp-sum-sub">÷ 3 families</div></div>
+    <div class="exp-sum-card"><div class="exp-sum-label">Entries</div><div class="exp-sum-value" id="exp-count">0</div></div>
+  </div>
+
+  <!-- ADD EXPENSE FORM -->
+  <div class="exp-add-card">
+    <h3 style="font-size:.95rem;font-weight:800;color:var(--green-800);margin-bottom:12px;" id="exp-form-title">➕ Add Expense</h3>
+    <input type="hidden" id="exp-edit-id" value="">
+    <div class="exp-form-grid">
+      <div class="exp-field">
+        <label for="ef-date">Date</label>
+        <input type="date" id="ef-date" min="2026-12-25" max="2026-12-28">
+      </div>
+      <div class="exp-field">
+        <label for="ef-paid">Paid by</label>
+        <select id="ef-paid">
+          <!-- populated by JS from TRIP_EXP.payers -->
+        </select>
+      </div>
+      <div class="exp-field">
+        <label for="ef-cat">Category</label>
+        <select id="ef-cat">
+          <option value="Fuel">⛽ Fuel</option>
+          <option value="Toll">🛣️ Toll</option>
+          <option value="Food">🍽️ Food</option>
+          <option value="Stay">🏨 Stay</option>
+          <option value="Tickets/Tour">🎟️ Tickets / Tour</option>
+          <option value="Shopping">🛍️ Shopping</option>
+          <option value="Other">📦 Other</option>
+        </select>
+      </div>
+      <div class="exp-field">
+        <label for="ef-amt">Amount (₹)</label>
+        <input type="number" id="ef-amt" placeholder="0" min="0" step="1">
+      </div>
+      <div class="exp-field" style="grid-column:span 2;">
+        <label for="ef-note">Note (optional)</label>
+        <input type="text" id="ef-note" placeholder="e.g. NH16 petrol stop near Kharagpur" maxlength="80">
+      </div>
+      <div class="exp-field" style="grid-column:span 2;">
+        <label for="ef-shared">Shared with</label>
+        <select id="ef-shared">
+          <option value="all">All (3 families + friends)</option>
+          <option value="families">3 Families only</option>
+          <option value="Family 1">Family 1 only</option>
+          <option value="Family 2">Family 2 only</option>
+          <option value="Family 3">Family 3 only</option>
+          <option value="friends">Friends only</option>
+        </select>
+      </div>
+    </div>
+    <button class="exp-submit-btn" onclick="submitExpense()">➕ Add Expense</button>
+    <button id="exp-cancel-edit-btn" onclick="cancelExpEdit()" style="display:none;margin-top:8px;width:100%;background:none;border:1.5px solid var(--text-300);color:var(--text-500);border-radius:var(--radius-sm);padding:8px;font-size:.88rem;font-weight:700;cursor:pointer;">✕ Cancel Edit</button>
+  </div>
+
+  <!-- EXPENSES TABLE -->
+  <h2 class="section-title">📋 All Expenses</h2>
+  <div class="exp-table-wrap">
+    <table class="exp-table" id="exp-table">
+      <thead>
+        <tr>
+          <th>Date</th><th>Category</th><th>Description / Note</th>
+          <th>Paid by</th><th>Shared with</th><th style="text-align:right;">₹ Amount</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="exp-tbody"></tbody>
+    </table>
+  </div>
+
+  <!-- CATEGORY CHART -->
+  <h2 class="section-title">📊 By Category</h2>
+  <div class="card cat-chart" id="cat-chart"></div>
+
+  <!-- PER-PERSON SUMMARY -->
+  <h2 class="section-title" style="margin-top:20px;">👥 Paid vs. Fair Share</h2>
+  <div class="card" style="overflow-x:auto;margin-bottom:20px;">
+    <table class="pps-table" id="pps-table">
+      <thead><tr><th>Person / Family</th><th>Paid</th><th>Fair Share</th><th>Balance</th></tr></thead>
+      <tbody id="pps-tbody"></tbody>
+    </table>
+  </div>
+
+  <!-- SETTLE UP -->
+  <h2 class="section-title">💸 Settle Up</h2>
+  <p style="font-size:.82rem;color:var(--text-500);margin-bottom:12px;">Minimum number of transfers to clear all debts.</p>
+  <div id="settle-list"></div>
+
+  <!-- PAYER NAMES CONFIG -->
+  <details style="margin-top:24px;" id="payer-config-wrap">
+    <summary style="cursor:pointer;font-size:.88rem;font-weight:700;color:var(--green-700);">✏️ Edit Family / Payer Names</summary>
+    <div class="card" style="margin-top:10px;">
+      <p style="font-size:.82rem;color:var(--text-500);margin-bottom:10px;">Rename the payers to your real family names. Saved in your browser.</p>
+      <div id="payer-name-fields" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"></div>
+      <button onclick="savePayerNames()" style="margin-top:12px;background:var(--green-700);color:#fff;border:none;border-radius:var(--radius-sm);padding:8px 18px;font-size:.88rem;font-weight:700;cursor:pointer;">💾 Save Names</button>
+    </div>
+  </details>
+
+</div>
+<!-- END EXPENSES -->
+
+</main>
+
+<footer>
+  <p>🌿 Simlipal Family Trip Planner — Dec 2026 &nbsp;|&nbsp; Made with ♥ for the convoy</p>
+  <p style="margin-top:6px;">
+    Images: <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a> (CC-BY-SA 4.0 / CC-BY-SA 3.0 where noted).
+    Barehipani &amp; Joranda waterfall photos by <strong>Toni Wöhrl</strong>, CC-BY-SA 4.0.
+  </p>
+  <p style="margin-top:6px;">
+    ⚠️ <strong>Disclaimer:</strong> All timings, distances, and costs are approximate. Forest department rules, entry quotas, and gate timings change seasonally.
+    Always verify with the resort, tour operator, or official sources (<a href="https://similipal.org" target="_blank" rel="noopener">similipal.org</a> / <a href="https://ecotourodisha.com" target="_blank" rel="noopener">ecotourodisha.com</a>) before travelling.
+    Phone numbers in the contacts section are for user input only — no numbers have been pre-filled.
+  </p>
+</footer>
+
+
+<script>
+/* =================================================================
+   TRIP DATA — edit this object to update itinerary content
+   ================================================================= */
+const TRIP = {
+  departDate: new Date('2026-12-25T06:00:00'),
+  families: ['Family A','Family B','Family C'],
+  persons: [
+    { id:'a1', name:'Adult A1', family:'Family A', isKid:false },
+    { id:'a2', name:'Adult A2', family:'Family A', isKid:false },
+    { id:'ka', name:'Child A (2y)', family:'Family A', isKid:true },
+    { id:'b1', name:'Adult B1', family:'Family B', isKid:false },
+    { id:'b2', name:'Adult B2', family:'Family B', isKid:false },
+    { id:'kb', name:'Child B (3y)', family:'Family B', isKid:true },
+    { id:'c1', name:'Adult C1', family:'Family C', isKid:false },
+    { id:'c2', name:'Adult C2', family:'Family C', isKid:false },
+    { id:'kc', name:'Child C (4y)', family:'Family C', isKid:true },
+    { id:'f1', name:'Friend 1', family:'Friends', isKid:false },
+    { id:'f2', name:'Friend 2', family:'Friends', isKid:false },
+  ],
+  vehicles: [
+    {
+      id:'scorp1', name:'Scorpio 1',
+      seats:[
+        {id:'s1-1',label:'Front (co-driver)'},
+        {id:'s1-2',label:'Row 2 — Left'},
+        {id:'s1-3',label:'Row 2 — Middle'},
+        {id:'s1-4',label:'Row 2 — Right'},
+        {id:'s1-5',label:'Row 3 — Left'},
+        {id:'s1-6',label:'Row 3 — Middle'},
+      ]
+    },
+    {
+      id:'scorp2', name:'Scorpio 2',
+      seats:[
+        {id:'s2-1',label:'Front (co-driver)'},
+        {id:'s2-2',label:'Row 2 — Left'},
+        {id:'s2-3',label:'Row 2 — Middle'},
+        {id:'s2-4',label:'Row 2 — Right'},
+        {id:'s2-5',label:'Row 3 — Left'},
+      ]
+    }
+  ],
+  checklistGroups: [
+    {
+      title:'👤 Adults', icon:'🧑',
+      items:['T-shirts / casual tops (3–4 per person)','Trousers / track pants','Comfortable walking shoes / sneakers','Flip-flops / sandals for resort','Undergarments & socks (4 days)','Personal toiletries (toothbrush, paste, soap, shampoo)','Sunscreen SPF 30+','Personal medications','Sunglasses','Small day-bag / backpack per couple']
+    },
+    {
+      title:'🧒 Kids', icon:'🧒',
+      items:['Diapers / pull-ups (extra supply)','Wet wipes — lots','Changes of clothes (2–3 per day)','Favourite snacks (biscuits, fruit pouches, puffs)','Small favourite toy or comfort item','Kids\' first-aid kit (paracetamol drops, ORS, antiseptic)','Mosquito repellent safe for children','Sun hat or cap','Light cotton onesie / romper for Day 3','Sleeping buddy / pillow for car rides']
+    },
+    {
+      title:'🧊 Winter Wear (December nights are cold — 8–14 °C)', icon:'🧥',
+      items:['Warm jacket or fleece for each adult','Kids\' warm onesie or fleece jacket','Light woollen cap / beanie','Gloves (optional but useful for early mornings)','Thermal inner layer for night walks / campfire']
+    },
+    {
+      title:'📄 Documents', icon:'📋',
+      items:['Aadhaar / Passport — all adults','Driving licences — all drivers','Vehicle registration certificates (RC) — all 3 cars','Vehicle insurance — all 3 cars','PUC certificates — all 3 cars','Resort booking confirmation (printed + digital)','Tour operator booking confirmation (Day 3 Scorpios)','Forest entry permit / receipt (collect at gate)','Children\'s birth certificates (optional, recommended)']
+    },
+    {
+      title:'🚗 Car Kit', icon:'🔧',
+      items:['Child car seats for 3 kids (age 2, 3, 4)','Torch / headlamp (1 per car)','Power banks (fully charged)','Charging cables for all devices','Water bottles (2 L per adult, 500 ml per child — refill daily)','Reusable shopping bags (no plastic inside reserve)','Basic car toolkit (spare tyre, jack, jumper cables)','Offline maps downloaded on each phone','Hand sanitiser','Dustbin bag for car waste — carry all litter out']
+    }
+  ],
+  contacts: [
+    {id:'stay', label:'Resort / Stay Manager'},
+    {id:'tour', label:'Tour Operator (Scorpio, Day 3)'},
+    {id:'forest', label:'Forest Office / Range Officer'},
+    {id:'gate-p', label:'Pithabata Gate'},
+    {id:'gate-j', label:'Jashipur (Kaliani) Gate'},
+    {id:'emerg', label:'Emergency / Ambulance (local)'},
+    {id:'police', label:'Local Police Station'},
+    {id:'dr', label:'Nearest Doctor / Hospital'},
+  ]
+};
+
+/* =================================================================
+   COUNTDOWN TIMER
+   ================================================================= */
+function updateCountdown() {
+  const now = new Date();
+  const diff = TRIP.departDate - now;
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '0';
+    document.getElementById('cd-hrs').textContent  = '0';
+    document.getElementById('cd-min').textContent  = '0';
+    document.getElementById('cd-sec').textContent  = '0';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = d;
+  document.getElementById('cd-hrs').textContent  = h;
+  document.getElementById('cd-min').textContent  = m;
+  document.getElementById('cd-sec').textContent  = String(s).padStart(2,'0');
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+/* =================================================================
+   THEME TOGGLE
+   ================================================================= */
+function toggleTheme() {
+  const html = document.documentElement;
+  const dark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', dark ? 'light' : 'dark');
+  document.getElementById('theme-btn').textContent = dark ? '🌙 Dark' : '☀️ Light';
+  localStorage.setItem('theme', dark ? 'light' : 'dark');
+}
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme','dark');
+    const btn = document.getElementById('theme-btn');
+    if (btn) btn.textContent = '☀️ Light';
+  }
+})();
+
+/* =================================================================
+   TAB SWITCHING
+   ================================================================= */
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + tabId).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: document.getElementById('tabs-wrap').offsetTop - 2, behavior: 'smooth' });
+}
+
+/* =================================================================
+   RESORT SIDE SELECTOR
+   ================================================================= */
+function onResortChange() {
+  const side = document.getElementById('resort-side').value;
+  const distText = document.getElementById('dist-text');
+  const noteTitle = document.getElementById('day1-route-title');
+  const distLine  = document.getElementById('day1-dist-line');
+  if (side === 'pithabata') {
+    distText.textContent = '~220 km from Kolkata via NH16 → Baripada → Pithabata';
+    noteTitle.textContent = '📌 Route: Pithabata/Baripada side';
+    distLine.innerHTML = 'Distance: <strong>~220 km</strong> from central Kolkata to Baripada town, then ~22 km to Pithabata gate area. Total ~242 km. <span class="badge badge-amber">approx.</span>';
+  } else {
+    distText.textContent = '~290 km from Kolkata via NH16/NH18 → Baripada → Jashipur';
+    noteTitle.textContent = '📌 Route: Jashipur side';
+    distLine.innerHTML = 'Distance: <strong>~290 km</strong> from central Kolkata via NH16/NH18 to Jashipur area. <span class="badge badge-amber">approx.</span>';
+  }
+  // Show/hide Sitakund card
+  document.querySelectorAll('.sitakund-only').forEach(el => {
+    el.style.display = side === 'pithabata' ? '' : 'none';
+  });
+  localStorage.setItem('resort-side', side);
+}
+function saveResortAddr() {
+  const v = document.getElementById('resort-addr').value;
+  localStorage.setItem('resort-addr', v);
+  const btn = document.getElementById('resort-maps-btn');
+  if (btn && v.startsWith('http')) btn.href = v;
+}
+(function() {
+  const side = localStorage.getItem('resort-side') || 'pithabata';
+  const addr = localStorage.getItem('resort-addr') || 'https://maps.app.goo.gl/U6E8Sx6MjKrQHV957';
+  document.getElementById('resort-side').value = side;
+  const addrEl = document.getElementById('resort-addr');
+  if (addrEl) addrEl.value = addr;
+  const btn = document.getElementById('resort-maps-btn');
+  if (btn && addr.startsWith('http')) btn.href = addr;
+  onResortChange();
+})();
+
+/* =================================================================
+   DAY 2 IDEA FILTER
+   ================================================================= */
+function filterIdeas(filter, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.idea-card').forEach(card => {
+    if (filter === 'all') {
+      card.classList.remove('hidden');
+    } else {
+      const tags = (card.dataset.tags || '').split(' ');
+      card.classList.toggle('hidden', !tags.includes(filter));
+    }
+  });
+  // Always respect Sitakund visibility
+  const side = document.getElementById('resort-side').value;
+  document.querySelectorAll('.sitakund-only').forEach(el => {
+    if (side !== 'pithabata') el.classList.add('hidden');
+  });
+}
+
+/* =================================================================
+   SEATING TOOL (Day 3)
+   ================================================================= */
+let seating = {}; // seatId -> personId
+let personAssigned = {}; // personId -> seatId
+
+function saveSeating() { localStorage.setItem('seating', JSON.stringify(seating)); }
+function loadSeating() {
+  try { return JSON.parse(localStorage.getItem('seating')) || {}; } catch(e) { return {}; }
+}
+
+function renderSeating() {
+  seating = loadSeating();
+  personAssigned = {};
+  Object.entries(seating).forEach(([seatId, personId]) => { if (personId) personAssigned[personId] = seatId; });
+
+  // Person pool
+  const pool = document.getElementById('person-pool');
+  pool.innerHTML = '';
+  TRIP.persons.forEach(p => {
+    const chip = document.createElement('div');
+    chip.className = 'person-chip' + (p.isKid ? ' child-chip' : '') + (personAssigned[p.id] ? ' assigned' : '');
+    chip.textContent = p.name;
+    chip.dataset.personId = p.id;
+    chip.draggable = !personAssigned[p.id];
+    chip.addEventListener('dragstart', e => { if (personAssigned[p.id]) { e.preventDefault(); return; } e.dataTransfer.setData('personId', p.id); });
+    chip.addEventListener('click', () => { if (!personAssigned[p.id]) openAssignModal(p.id); });
+    pool.appendChild(chip);
+  });
+
+  // Vehicles
+  const wrap = document.getElementById('vehicles-wrap');
+  wrap.innerHTML = '';
+  TRIP.vehicles.forEach(v => {
+    const vc = document.createElement('div');
+    vc.className = 'vehicle-card';
+    vc.innerHTML = `<h3>🚙 ${v.name}</h3><div class="seat-grid" id="grid-${v.id}"></div>`;
+    wrap.appendChild(vc);
+    const grid = document.getElementById('grid-' + v.id);
+    v.seats.forEach(seat => {
+      const occupantId = seating[seat.id];
+      const occupant = occupantId ? TRIP.persons.find(p => p.id === occupantId) : null;
+      const slot = document.createElement('div');
+      slot.className = 'seat-slot' + (occupant ? ' occupied' : '');
+      slot.dataset.seatId = seat.id;
+      slot.innerHTML = `
+        <div class="seat-label">${seat.label}</div>
+        ${occupant ? `<div class="seat-person">${occupant.name}</div><button class="seat-remove-btn" title="Remove" onclick="removeSeat('${seat.id}')">✕</button>` : '<span style="font-size:.7rem;opacity:.5">Tap to assign</span>'}
+      `;
+      slot.addEventListener('dragover', e => { e.preventDefault(); slot.classList.add('drag-over'); });
+      slot.addEventListener('dragleave', () => slot.classList.remove('drag-over'));
+      slot.addEventListener('drop', e => {
+        e.preventDefault();
+        slot.classList.remove('drag-over');
+        const pid = e.dataTransfer.getData('personId');
+        assignPerson(pid, seat.id);
+      });
+      slot.addEventListener('click', () => { if (!occupant) openAssignModal(seat.id); });
+      grid.appendChild(slot);
+    });
+  });
+}
+
+function openAssignModal(seedId) {
+  // Simple tap-to-assign: show a mini prompt to pick person if seedId is a seatId
+  const isSeat = TRIP.vehicles.some(v => v.seats.some(s => s.id === seedId));
+  if (isSeat) {
+    const unassigned = TRIP.persons.filter(p => !personAssigned[p.id]);
+    if (!unassigned.length) { alert('All persons are already assigned!'); return; }
+    const names = unassigned.map((p,i) => `${i+1}. ${p.name}`).join('\n');
+    const choice = prompt(`Assign to seat.\nPick a number:\n${names}`);
+    const idx = parseInt(choice) - 1;
+    if (!isNaN(idx) && unassigned[idx]) { assignPerson(unassigned[idx].id, seedId); }
+  }
+}
+
+function assignPerson(personId, seatId) {
+  // Remove from old seat if any
+  if (personAssigned[personId]) { delete seating[personAssigned[personId]]; }
+  // If seat already occupied, unassign occupant
+  if (seating[seatId]) { delete personAssigned[seating[seatId]]; }
+  seating[seatId] = personId;
+  personAssigned[personId] = seatId;
+  saveSeating();
+  renderSeating();
+}
+
+function removeSeat(seatId) {
+  const pid = seating[seatId];
+  if (pid) delete personAssigned[pid];
+  delete seating[seatId];
+  saveSeating();
+  renderSeating();
+}
+
+function resetSeating() {
+  if (!confirm('Reset all seating assignments?')) return;
+  seating = {};
+  personAssigned = {};
+  localStorage.removeItem('seating');
+  renderSeating();
+}
+
+/* =================================================================
+   PACKING CHECKLIST
+   ================================================================= */
+function renderChecklist() {
+  const saved = JSON.parse(localStorage.getItem('checklist') || '{}');
+  const container = document.getElementById('checklist-container');
+  container.innerHTML = '';
+  let total = 0, checked = 0;
+
+  TRIP.checklistGroups.forEach(group => {
+    const div = document.createElement('div');
+    div.className = 'checklist-group card';
+    div.style.marginBottom = '16px';
+    let html = `<h3>${group.title}</h3>`;
+    group.items.forEach(item => {
+      const key = group.title + '::' + item;
+      const isChecked = !!saved[key];
+      total++;
+      if (isChecked) checked++;
+      html += `
+        <label class="checklist-item${isChecked?' checked':''}">
+          <input type="checkbox" ${isChecked?'checked':''} onchange="toggleCheck(this,'${CSS.escape(key)}')">
+          <span>${item}</span>
+        </label>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+  updateChecklistProgress(checked, total);
+}
+
+function toggleCheck(el, key) {
+  const saved = JSON.parse(localStorage.getItem('checklist') || '{}');
+  saved[key] = el.checked;
+  localStorage.setItem('checklist', JSON.stringify(saved));
+  el.closest('.checklist-item').classList.toggle('checked', el.checked);
+  // Recount
+  const all = document.querySelectorAll('.checklist-item input');
+  const total = all.length;
+  const checked = [...all].filter(c => c.checked).length;
+  updateChecklistProgress(checked, total);
+}
+
+function updateChecklistProgress(checked, total) {
+  document.getElementById('checklist-status').textContent = `${checked} of ${total} items checked`;
+  document.getElementById('checklist-bar').style.width = total ? (checked/total*100)+'%' : '0%';
+}
+
+function clearChecklist() {
+  if (!confirm('Reset all checklist items?')) return;
+  localStorage.removeItem('checklist');
+  renderChecklist();
+}
+
+/* =================================================================
+   SHARED EXPENSE TRACKER
+   ================================================================= */
+
+// ---- Config ----
+// Pre-baked defaults — the page works out of the box without manual setup.
+// Anyone can still override these in the Setup section of the Expenses tab.
+const SCRIPT_URL_DEFAULT = 'https://script.google.com/macros/s/AKfycby5e_fZyXSC6i_p20_IMbjnEMtRCjQ2MUVJ_xGK7MwQF3SieV-qnL2E7kAt2UTW-AosDw/exec';
+const TRIP_CODE_DEFAULT  = 'SIMLIPAL26';
+
+const EXP_CFG_KEY   = 'exp_config';
+const EXP_LOCAL_KEY = 'exp_local_v2';
+
+// Default payer names (editable)
+const DEFAULT_PAYERS = ['Family 1','Family 2','Family 3','Friend A','Friend B'];
+
+function getPayerNames() {
+  try { return JSON.parse(localStorage.getItem('payer_names') || 'null') || [...DEFAULT_PAYERS]; }
+  catch(e) { return [...DEFAULT_PAYERS]; }
+}
+function savePayerNames() {
+  const fields = document.querySelectorAll('.payer-name-input');
+  const names = [...fields].map(f => f.value.trim() || f.placeholder);
+  localStorage.setItem('payer_names', JSON.stringify(names));
+  renderPayerNameFields();
+  renderExpTab();
+  alert('Names saved! They are stored in your browser only.');
+}
+function renderPayerNameFields() {
+  const names = getPayerNames();
+  const wrap = document.getElementById('payer-name-fields');
+  if (!wrap) return;
+  wrap.innerHTML = DEFAULT_PAYERS.map((def,i) => `
+    <div class="exp-field">
+      <label>Payer ${i+1} (default: ${def})</label>
+      <input class="payer-name-input" type="text" value="${names[i]}" placeholder="${def}">
+    </div>
+  `).join('');
+}
+function populatePaidBySelect() {
+  const sel = document.getElementById('ef-paid');
+  if (!sel) return;
+  const names = getPayerNames();
+  sel.innerHTML = names.map(n => `<option value="${n}">${n}</option>`).join('');
+}
+
+// ---- Config save/load ----
+function getExpConfig() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(EXP_CFG_KEY) || '{}');
+    return {
+      url:  saved.url  || SCRIPT_URL_DEFAULT,
+      code: saved.code || TRIP_CODE_DEFAULT
+    };
+  } catch(e) {
+    return { url: SCRIPT_URL_DEFAULT, code: TRIP_CODE_DEFAULT };
+  }
+}
+function saveExpConfig() {
+  const url  = (document.getElementById('cfg-url')  || {}).value || '';
+  const code = (document.getElementById('cfg-code') || {}).value || '';
+  localStorage.setItem(EXP_CFG_KEY, JSON.stringify({ url, code }));
+}
+function saveExpConfigBtn() {
+  saveExpConfig();
+  expRefresh();
+  alert('Config saved. Attempting to connect to Google Sheets…');
+}
+function clearExpConfig() {
+  localStorage.removeItem(EXP_CFG_KEY);
+  const urlEl  = document.getElementById('cfg-url');
+  const codeEl = document.getElementById('cfg-code');
+  if (urlEl)  urlEl.value  = SCRIPT_URL_DEFAULT;
+  if (codeEl) codeEl.value = TRIP_CODE_DEFAULT;
+  setSyncBadge('syncing','🔄 Reconnecting…');
+  expRefresh();
+}
+function loadExpConfigUI() {
+  const cfg = getExpConfig();
+  const urlEl  = document.getElementById('cfg-url');
+  const codeEl = document.getElementById('cfg-code');
+  if (urlEl)  urlEl.value  = cfg.url;
+  if (codeEl) codeEl.value = cfg.code;
+}
+
+// ---- Local storage ----
+function getLocalExp() {
+  try { return JSON.parse(localStorage.getItem(EXP_LOCAL_KEY) || '[]'); } catch(e){ return []; }
+}
+function setLocalExp(arr) { localStorage.setItem(EXP_LOCAL_KEY, JSON.stringify(arr)); }
+
+// ---- Sync badge ----
+function setSyncBadge(state, text) {
+  const b = document.getElementById('exp-sync-badge');
+  if (!b) return;
+  b.className = 'sync-badge ' + state;
+  b.textContent = text;
+}
+
+// ---- Remote fetch ----
+async function fetchRemoteExp() {
+  const cfg = getExpConfig();
+  if (!cfg.url || !cfg.code) return null;
+  try {
+    setSyncBadge('syncing','🔄 Syncing…');
+    const res = await fetch(`${cfg.url}?code=${encodeURIComponent(cfg.code)}`);
+    const data = await res.json();
+    if (data.error) { setSyncBadge('offline','🔴 ' + data.error); return null; }
+    setSyncBadge('synced','✅ Synced');
+    return data.rows || [];
+  } catch(e) {
+    setSyncBadge('offline','🔴 Network error');
+    return null;
+  }
+}
+
+async function pushToRemote(expense) {
+  const cfg = getExpConfig();
+  if (!cfg.url || !cfg.code) return false;
+  try {
+    const res = await fetch(cfg.url, {
+      method: 'POST',
+      body: JSON.stringify({ ...expense, action: 'add', code: cfg.code }),
+    });
+    const data = await res.json();
+    return !!data.ok;
+  } catch(e) { return false; }
+}
+
+async function deleteFromRemote(id) {
+  const cfg = getExpConfig();
+  if (!cfg.url || !cfg.code) return false;
+  try {
+    const res = await fetch(cfg.url, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'delete', id, code: cfg.code }),
+    });
+    const data = await res.json();
+    return !!data.ok;
+  } catch(e) { return false; }
+}
+
+// ---- Merge local + remote ----
+// Remote is authoritative; local "pending" items are ones not yet pushed
+let cachedRemoteRows = null;
+
+async function getMergedExpenses() {
+  const local = getLocalExp();
+  if (!cachedRemoteRows) return local;
+  // Keep local pending entries not yet in remote
+  const remoteIds = new Set(cachedRemoteRows.map(r => String(r.id)));
+  const stillPending = local.filter(e => e.pending && !remoteIds.has(String(e.id)));
+  return [...cachedRemoteRows.map(r => ({...r, pending:false})), ...stillPending];
+}
+
+async function expRefresh() {
+  setSyncBadge('syncing','🔄 Syncing…');
+  const cfg = getExpConfig();
+  if (!cfg.url || !cfg.code) {
+    setSyncBadge('offline','⚫ Offline-only');
+    cachedRemoteRows = null;
+    // Try to push any pending local items in case config was just added
+  } else {
+    cachedRemoteRows = await fetchRemoteExp();
+    if (cachedRemoteRows) {
+      // Retry pushing pending local items
+      const local = getLocalExp();
+      const remoteIds = new Set(cachedRemoteRows.map(r => String(r.id)));
+      const pending = local.filter(e => e.pending && !remoteIds.has(String(e.id)));
+      for (const exp of pending) {
+        const ok = await pushToRemote(exp);
+        if (ok) {
+          exp.pending = false;
+          setLocalExp(local);
+        }
+      }
+      cachedRemoteRows = await fetchRemoteExp() || cachedRemoteRows;
+    }
+  }
+  renderExpTab();
+}
+
+// ---- Add / edit expense ----
+function todayISO() { return new Date().toISOString().slice(0,10); }
+
+function initExpForm() {
+  const d = document.getElementById('ef-date');
+  if (d && !d.value) d.value = '2026-12-25';
+  populatePaidBySelect();
+}
+
+async function submitExpense() {
+  const editId = (document.getElementById('exp-edit-id') || {}).value || '';
+  const date   = document.getElementById('ef-date').value;
+  const paidBy = document.getElementById('ef-paid').value;
+  const cat    = document.getElementById('ef-cat').value;
+  const amt    = parseFloat(document.getElementById('ef-amt').value);
+  const note   = document.getElementById('ef-note').value.trim();
+  const shared = document.getElementById('ef-shared').value;
+
+  if (!date || !paidBy || isNaN(amt) || amt <= 0) {
+    alert('Please fill in date, paid by, and a valid amount.');
+    return;
+  }
+
+  if (editId) {
+    // Edit: update local, delete+re-add remote
+    const local = getLocalExp();
+    const idx = local.findIndex(e => String(e.id) === String(editId));
+    if (idx >= 0) {
+      local[idx] = { ...local[idx], date, paidBy, category:cat, amount:amt, note, sharedWith:shared, pending: local[idx].pending };
+      setLocalExp(local);
+    }
+    if (cachedRemoteRows) {
+      await deleteFromRemote(editId);
+      await pushToRemote({ id: editId, date, paidBy, category:cat, amount:amt, note, sharedWith:shared });
+    }
+    cancelExpEdit();
+  } else {
+    const id = Date.now();
+    const exp = { id, date, paidBy, category:cat, amount:amt, note, sharedWith:shared, pending:true };
+    const local = getLocalExp();
+    local.push(exp);
+    setLocalExp(local);
+    // Try to push immediately if online
+    const cfg = getExpConfig();
+    if (cfg.url && cfg.code) {
+      setSyncBadge('syncing','🔄 Syncing…');
+      const ok = await pushToRemote(exp);
+      if (ok) {
+        exp.pending = false;
+        setLocalExp(local);
+        cachedRemoteRows = await fetchRemoteExp() || cachedRemoteRows;
+        setSyncBadge('synced','✅ Synced');
+      } else {
+        setSyncBadge('pending','⏳ Pending sync');
+      }
+    } else {
+      setSyncBadge('offline','⚫ Offline-only');
+    }
+  }
+  // Clear form
+  document.getElementById('ef-amt').value = '';
+  document.getElementById('ef-note').value = '';
+  renderExpTab();
+}
+
+function startExpEdit(id) {
+  const allExp = JSON.parse(localStorage.getItem('_exp_render_cache') || '[]');
+  const exp = allExp.find(e => String(e.id) === String(id));
+  if (!exp) return;
+  document.getElementById('exp-edit-id').value = id;
+  document.getElementById('ef-date').value = exp.date || '';
+  document.getElementById('ef-amt').value  = exp.amount;
+  document.getElementById('ef-note').value = exp.note || '';
+  populatePaidBySelect();
+  document.getElementById('ef-paid').value   = exp.paidBy   || '';
+  document.getElementById('ef-cat').value    = exp.category || '';
+  document.getElementById('ef-shared').value = exp.sharedWith || 'all';
+  document.getElementById('exp-form-title').textContent = '✏️ Edit Expense';
+  document.getElementById('exp-submit-btn') && (document.querySelector('.exp-submit-btn').textContent = '💾 Save Changes');
+  document.getElementById('exp-cancel-edit-btn').style.display = '';
+  document.querySelector('.exp-add-card').scrollIntoView({ behavior:'smooth' });
+}
+
+function cancelExpEdit() {
+  document.getElementById('exp-edit-id').value = '';
+  document.getElementById('exp-form-title').textContent = '➕ Add Expense';
+  document.querySelector('.exp-submit-btn').textContent = '➕ Add Expense';
+  document.getElementById('exp-cancel-edit-btn').style.display = 'none';
+}
+
+async function deleteExpenseNew(id) {
+  if (!confirm('Delete this expense?')) return;
+  const local = getLocalExp();
+  const updated = local.filter(e => String(e.id) !== String(id));
+  setLocalExp(updated);
+  if (cachedRemoteRows) {
+    await deleteFromRemote(id);
+    cachedRemoteRows = await fetchRemoteExp() || cachedRemoteRows;
+  }
+  renderExpTab();
+}
+
+// ---- Render ----
+async function renderExpTab() {
+  const allExp = await getMergedExpenses();
+  // Cache for edit lookup
+  localStorage.setItem('_exp_render_cache', JSON.stringify(allExp));
+
+  const names = getPayerNames();
+  const today = todayISO();
+
+  // Summary
+  const grandTotal = allExp.reduce((s,e) => s + Number(e.amount||0), 0);
+  const todayTotal = allExp.filter(e => e.date === today).reduce((s,e) => s + Number(e.amount||0), 0);
+  const perFam = grandTotal / 3;
+  document.getElementById('exp-today').textContent = '₹' + todayTotal.toLocaleString('en-IN',{maximumFractionDigits:0});
+  document.getElementById('exp-grand').textContent = '₹' + grandTotal.toLocaleString('en-IN',{maximumFractionDigits:0});
+  document.getElementById('exp-per-fam').textContent = '₹' + Math.round(perFam).toLocaleString('en-IN');
+  document.getElementById('exp-count').textContent = allExp.length;
+
+  // Table
+  const tbody = document.getElementById('exp-tbody');
+  if (!allExp.length) {
+    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-300);padding:20px;">No expenses yet — add one above.</td></tr>';
+  } else {
+    tbody.innerHTML = allExp.slice().reverse().map(e => `
+      <tr class="${e.pending ? 'exp-row-pending' : ''}">
+        <td>${e.date||''}</td>
+        <td>${e.category||''}</td>
+        <td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${(e.note||'').replace(/"/g,'&quot;')}">${e.note||'—'}</td>
+        <td>${e.paidBy||''}</td>
+        <td style="font-size:.78rem;">${e.sharedWith||'all'}</td>
+        <td style="text-align:right;font-weight:700;">₹${Number(e.amount||0).toLocaleString('en-IN',{maximumFractionDigits:0})}</td>
+        <td style="white-space:nowrap;">
+          <button class="exp-edit-btn" onclick="startExpEdit('${e.id}')" title="Edit">✏️</button>
+          <button class="exp-del-btn"  onclick="deleteExpenseNew('${e.id}')" title="Delete">🗑️</button>
+        </td>
+      </tr>`).join('');
+  }
+
+  // Category chart
+  const cats = {};
+  allExp.forEach(e => { cats[e.category||'Other'] = (cats[e.category||'Other']||0) + Number(e.amount||0); });
+  const maxCat = Math.max(1, ...Object.values(cats));
+  const catChart = document.getElementById('cat-chart');
+  if (catChart) {
+    if (!Object.keys(cats).length) {
+      catChart.innerHTML = '<p style="color:var(--text-300);font-size:.85rem;">No data yet.</p>';
+    } else {
+      catChart.innerHTML = Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([cat,val]) => `
+        <div class="cat-bar-row">
+          <div class="cat-bar-label">${cat}</div>
+          <div class="cat-bar-track"><div class="cat-bar-fill" style="width:${Math.round(val/maxCat*100)}%"></div></div>
+          <div class="cat-bar-val">₹${Math.round(val).toLocaleString('en-IN')}</div>
+        </div>`).join('');
+    }
+  }
+
+  // Per-payer paid vs share
+  const payers = names.slice(0,3); // 3 families for fair-share split
+  const paidMap = {};
+  names.forEach(n => paidMap[n] = 0);
+  allExp.forEach(e => { if(paidMap[e.paidBy] !== undefined) paidMap[e.paidBy] += Number(e.amount||0); });
+  const famShare = grandTotal / 3;
+
+  const ppsTbody = document.getElementById('pps-tbody');
+  if (ppsTbody) {
+    ppsTbody.innerHTML = [...payers, ...names.slice(3)].map(name => {
+      const paid = paidMap[name] || 0;
+      const share = payers.includes(name) ? famShare : 0;
+      const bal = paid - share;
+      return `<tr>
+        <td>${name}</td>
+        <td>₹${Math.round(paid).toLocaleString('en-IN')}</td>
+        <td>${share > 0 ? '₹'+Math.round(share).toLocaleString('en-IN') : '—'}</td>
+        <td class="${bal > 0.5 ? 'credit' : bal < -0.5 ? 'owed' : ''}">${
+          bal > 0.5 ? '← owed ₹'+Math.round(bal).toLocaleString('en-IN') :
+          bal < -0.5 ? '→ owes ₹'+Math.round(-bal).toLocaleString('en-IN') : '✅ settled'
+        }</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // Settle up — minimum cash flow algorithm
+  const balances = payers.map(n => ({ name: n, bal: (paidMap[n]||0) - famShare }));
+  const settleList = document.getElementById('settle-list');
+  const payments = minCashFlow(balances);
+  if (!payments.length) {
+    settleList.innerHTML = '<div class="settle-item">✅ Nothing to settle — everyone is even!</div>';
+  } else {
+    settleList.innerHTML = payments.map(p => `
+      <div class="settle-item">
+        <strong>${p.from}</strong>
+        <span class="settle-arrow">→</span>
+        <strong>${p.to}</strong>
+        <span class="settle-amount">₹${Math.round(p.amount).toLocaleString('en-IN')}</span>
+      </div>`).join('');
+  }
+}
+
+// Minimum cash flow (greedy)
+function minCashFlow(balances) {
+  const bal = balances.map(b => ({...b}));
+  const payments = [];
+  for (let i = 0; i < 20; i++) { // max iterations
+    bal.sort((a,b)=>a.bal - b.bal);
+    if (Math.abs(bal[0].bal) < 1) break;
+    const debtor  = bal[0];
+    const creditor = bal[bal.length-1];
+    const amt = Math.min(-debtor.bal, creditor.bal);
+    if (amt < 1) break;
+    debtor.bal  += amt;
+    creditor.bal -= amt;
+    payments.push({ from: debtor.name, to: creditor.name, amount: amt });
+  }
+  return payments;
+}
+
+// CSV export
+async function expExportCSV() {
+  const allExp = await getMergedExpenses();
+  if (!allExp.length) { alert('No expenses to export.'); return; }
+  const headers = ['id','date','paidBy','category','amount','note','sharedWith','pending'];
+  const rows = allExp.map(e => headers.map(h => JSON.stringify(e[h]||'')).join(','));
+  const csv = [headers.join(','), ...rows].join('\n');
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = 'simlipal_expenses.csv'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+function copyAppsScript() {
+  const pre = document.getElementById('apps-script-code');
+  const text = pre ? pre.textContent : '';
+  navigator.clipboard.writeText(text).then(() => alert('Apps Script code copied to clipboard!')).catch(() => {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    alert('Apps Script code copied!');
+  });
+}
+
+// Retry sync when coming back online
+window.addEventListener('online', () => { expRefresh(); });
+
+/* =================================================================
+   CONTACTS
+   ================================================================= */
+function renderContacts() {
+  const saved = JSON.parse(localStorage.getItem('contacts') || '{}');
+  const grid = document.getElementById('contacts-grid');
+  grid.innerHTML = TRIP.contacts.map(c => `
+    <div class="contact-field">
+      <label for="cnt-${c.id}">${c.label}</label>
+      <input type="text" id="cnt-${c.id}" placeholder="Enter name & number…"
+        value="${saved[c.id]||''}"
+        onchange="saveContact('${c.id}',this.value)">
+    </div>
+  `).join('');
+}
+
+function saveContact(id, val) {
+  const saved = JSON.parse(localStorage.getItem('contacts') || '{}');
+  saved[id] = val;
+  localStorage.setItem('contacts', JSON.stringify(saved));
+}
+
+/* =================================================================
+   INIT
+   ================================================================= */
+document.addEventListener('DOMContentLoaded', () => {
+  renderSeating();
+  renderChecklist();
+  renderContacts();
+  loadExpConfigUI();
+  renderPayerNameFields();
+  initExpForm();
+  expRefresh();
+});
+</script>
+</body>
+</html>
